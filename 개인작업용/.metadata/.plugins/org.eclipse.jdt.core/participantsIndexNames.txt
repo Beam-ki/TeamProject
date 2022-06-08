@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+D:\Users\Desktop\eclipse-jee-2020-06-R-win32-x86_64\eclipse\작업폴더\개인작업용\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\723433157.index
+\BBS\src
+D:\Users\Desktop\eclipse-jee-2020-06-R-win32-x86_64\eclipse\작업폴더\개인작업용\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3725031322.index
+\BBS\src
