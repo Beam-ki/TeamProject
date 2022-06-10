@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+D:\Users\Desktop\eclipse-jee-2020-06-R-win32-x86_64\eclipse\작업폴더\개인작업용\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-142179624.index
-3819707233.index
-1329356035.index
-2117092782.index
-2449097776.index
-3263567519.index

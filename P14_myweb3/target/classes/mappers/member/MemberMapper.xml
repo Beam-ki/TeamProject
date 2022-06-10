@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- MemberMapper.xml -->
+<mapper namespace="com.web.root.mybatis.member.MemberMapper">
+
+	<resultMap type="com.web.root.member.dto.MemberDTO" id="member">
+		<id property="id" column="id"/>
+		<result property="pw" column="pw"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="nickname" column="nickname"/>
+	</resultMap>
+
+	<select id="user_check" parameterType ="String" resultType="String">
+		select count(*) from membership1 where id=#{id}
+	</select>
+	
+	<select id="memberInfo" resultMap="member">
+		select * from membership1
+	</select>
+	
+	<insert id="register">
+		insert into membership1 values(#{id}, #{pw}, #{name}, #{email}, #{nickname})
+	</insert>
+	
+	<select id="info" resultMap="member">
+		select * from membership1 where id=#{userid}
+	</select>
+	
+	<select id="logintest" resultType="Integer">
+		select count(*) from membership1 where id=#{id} and pw=#{pw}
+	</select>
+	
+</mapper>
