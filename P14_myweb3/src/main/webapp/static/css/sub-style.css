@@ -6,9 +6,11 @@
 }
 
 .notice .ico-notice {
-    width: 30px;
+    width: 40px;
     float: left;
     margin-right: 10px;
+    margin-top: 0;
+    cursor: default;
 }
 
 .product-board {
@@ -19,7 +21,7 @@
 .product-board .product {
     
     display: inline-block;
-    margin-right: 100px;
+    margin-right: 120px;
 }
 
 .product-board .product:last-of-type {
@@ -34,6 +36,11 @@
 
 .product-board .product .pro-title {
     margin-top: 30px;
+}
+
+.product-board .btn {
+    width: 100px;
+    margin-top: 70px;
 }
 
 /* product-detail page */
@@ -87,5 +94,46 @@
 }
 
 .mypage table {
+    width: 100%;
     margin-top: 0;
+}
+
+input[type=checkbox] {
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+}
+
+/* writing page */
+.writing form {
+    width: 80%;
+    font-size: 18px;
+    border: 0;
+}
+
+.writing .wr-title {
+    border-bottom: 1px solid #c6c6c6;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.writing .wr-title input {
+    margin-bottom: 0;
+    font-size: 18px;
+    width: 91%;
+    padding: 20px;
+}
+
+.writing textarea {
+    border: 1px solid #c6c6c6;
+    padding: 20px;
+}
+
+.writing .file {
+    margin-top: 10px;
+    width: 96%;
+    margin-left: 0;
+    float: left;
+    padding: 20px;
 }

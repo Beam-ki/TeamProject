@@ -25,7 +25,7 @@
                 <li class="left-nav home"><a href="/root/index"><span>중고</span>마켓</a></li>
                 <!--  <li class="left-nav clicked"><a href="/root/board/boardAllList">팝니다🙌</a></li>-->
                 <!--  <li class="left-nav"><a href="/root/board/qna">문의하기</a></li>-->
-                <li class="right-nav join"><a href="/root/member/register">회원가입</a></li>
+                <li class="right-nav join"><a href="/root/member/register_form">회원가입</a></li>
                 <!--  <li class="right-nav"><a href="/root/member/login">로그인</a></li>-->
             </ul>
         </nav>
@@ -39,7 +39,7 @@
                     <p>아이디&nbsp;&nbsp;&nbsp;<input type="text" name="id" placeholder=" 아이디를 입력해주세요" required></p>
                     <p>비밀번호<input type="password" name="pw" placeholder=" 비밀번호를 입력해주세요" required></p>
                     <input class="btn btn-submit" type="submit" value="로그인">
-                    <a href="/root/member/register" class="btn btn-submit">회원가입</a>
+                    <a href="/root/member/register_form" class="btn btn-submit">회원가입</a>
                 </fieldset>
             </form>    
         </section>

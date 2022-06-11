@@ -1,68 +1,85 @@
 package com.web.root.board.dto;
 
-//create table mvc_board(
-//Wirte_no number(10) primary key,
-//Title varchar2(100),
-//Content varchar2(300),
-//Savedate date default sysdate,
-//Hit number(10) default 0,
-//Image_file_name varchar2(100),
-//Id varchar2(20) not null,
-//constraint fk_test foreign key(id) references membership(id) on delete cascade
+//create table board_product(
+//product_title varchar(30),
+//product_day date default sysdate,
+//product_view number(38) default 0,
+//product_main varchar2(300),
+//product_img varchar(40),
+//product_wait varchar(40),
+//product_soldout varchar(40),
+//product_writer varchar2(20),
+//constraint fk foreign key(product_writer) references membership1(id) on delete cascade
 //);
 
 public class BoardDTO {
 
-	private int writeNo;
-	private String title;
-	private String content;
-	private String saveDate;
-	private int hit;
-	private String imageFileName;
-	private String id;
+	private int product_no;
+	private String product_title;
+	private String product_day;
+	private int product_view;
+	private String product_main;
+	private String product_img;
+	private String product_wait;
+	private String product_soldout;
+	private String product_writer;
 	
-	public int getWriteNo() {
-		return writeNo;
+	
+	public int getProduct_no() {
+		return product_no;
 	}
-	public void setWriteNo(int writeNo) {
-		this.writeNo = writeNo;
+	public void setProduct_no(int product_no) {
+		this.product_no = product_no;
 	}
-	public String getTitle() {
-		return title;
+	public String getProduct_title() {
+		return product_title;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setProduct_title(String product_title) {
+		this.product_title = product_title;
 	}
-	public String getContent() {
-		return content;
+	public String getProduct_day() {
+		return product_day;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setProduct_day(String product_day) {
+		this.product_day = product_day;
 	}
-	public String getSaveDate() {
-		return saveDate;
+	public int getProduct_view() {
+		return product_view;
 	}
-	public void setSaveDate(String saveDate) {
-		this.saveDate = saveDate;
+	public void setProduct_view(int product_view) {
+		this.product_view = product_view;
 	}
-	public int getHit() {
-		return hit;
+	public String getProduct_main() {
+		return product_main;
 	}
-	public void setHit(int hit) {
-		this.hit = hit;
+	public void setProduct_main(String product_main) {
+		this.product_main = product_main;
 	}
-	public String getImageFileName() {
-		return imageFileName;
+	public String getProduct_img() {
+		return product_img;
 	}
-	public void setImageFileName(String imageFileName) {
-		this.imageFileName = imageFileName;
+	public void setProduct_img(String product_img) {
+		this.product_img = product_img;
 	}
-	public String getId() {
-		return id;
+	public String getProduct_wait() {
+		return product_wait;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setProduct_wait(String product_wait) {
+		this.product_wait = product_wait;
 	}
+	public String getProduct_soldout() {
+		return product_soldout;
+	}
+	public void setProduct_soldout(String product_soldout) {
+		this.product_soldout = product_soldout;
+	}
+	public String getProduct_writer() {
+		return product_writer;
+	}
+	public void setProduct_writer(String product_writer) {
+		this.product_writer = product_writer;
+	}
+	
 	
 	
 }

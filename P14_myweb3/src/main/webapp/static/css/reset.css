@@ -92,13 +92,28 @@ span {
 
 /* 버튼 초기화 */
 .btn {
-  background-color: rgb(52, 152, 219);
-  border-radius: 7px;
   text-align: center;
-  color: white;
-  font-size: 15px;
-  line-height: 15px;
+  cursor: pointer;
+  width: 50px;
+  font-size: 17px;
+  line-height: 17px;
+  background-color: rgb(52, 152, 219); color: white;
+  border-radius: 7px;
   padding: 8px;
+  margin: 30px 10px 0 0;
+}
+
+.btn-submit {
+  width: 90px;
+}
+
+.btn-wrapper {
+  text-align: right;
+}
+
+.btn-wrapper * {
+  display: inline-block;
+  
 }
 
 /* table 초기화 */
@@ -123,10 +138,11 @@ table th.t-title {
 
 /* form 초기화 */
 form {
-  width: 600px;
+  width: 500px;
+  text-align: left;
   border: 1px solid rgb(236, 241, 244);
   border-radius: 20px;
-  padding: 50px 0;
+  padding: 50px;
   margin-top: 50px;
 }
 
@@ -135,24 +151,19 @@ form p:first-of-type {
 }
 
 form input {
-  width: 250px; height: 30px;
   border: 1px solid #c6c6c6;
-  border-radius: 5px;
   margin-left: 20px;
-  padding-left: 10px;
-  font-size: 15px;
-}
-
-form .btn-submit {
-  width: 80px; height: auto;
-  border: 1px solid rgb(52, 152, 219);
-  padding: 8px;
-  margin-top: 30px;
-  cursor: pointer;
+  padding: 5px 10px;
+  margin-bottom: 20px;
 }
 
 form .id-check {
   float: left;
+}
+
+form label {
+  display: inline-block;
+  width: 130px;
 }
 
 /* paging 초기화 */

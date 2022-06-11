@@ -59,9 +59,10 @@
                     <p class="wr-title">제목<input type="text" name="product_title" placeholder="제목을 입력해주세요" required></p>
                     <textarea name="product_main" id="wr-con" cols="130" rows="20" placeholder="본문 내용을 입력해주세요." required>
                     </textarea>
-                    <input type="file" class="file" name="product_img" onchange="readURL(this)">
+                    <input type="file" class="file" name="product_file">
+                    <img id="preview" src="#" width="100px" height="100px">
                     <div class="btn-wrapper">
-                        <div class="btn btn-submit"><a href="/root/board/contentView">&lt; back</a></div>
+                        <div class="btn btn-submit"><a href="/root/board/boardAllList">&lt; back</a></div>
                         <input class="btn" type="submit" value="등록">
                     </div>
                     

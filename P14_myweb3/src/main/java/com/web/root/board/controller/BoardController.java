@@ -30,7 +30,6 @@ public class BoardController {
 	
 	@GetMapping("boardAllList")
 	public String boardAllList(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
-//		bs.boardAllList(model);
 		bs.boardAllList(model, num);
 		return "board/boardAllList";
 	}
@@ -51,25 +50,24 @@ public class BoardController {
 	}
 	
 	@GetMapping("contentView")
-	public String contentView(@RequestParam int writeNo, Model model) {
-		bs.contentView(writeNo, model);
+	public String contentView(@RequestParam int product_no, Model model) {
+		bs.contentView(product_no, model);
 		return "board/contentView";
 	}
 	
 	@GetMapping("download")
-	public void download(@RequestParam String imageFileName, HttpServletResponse response) throws Exception {
-		response.addHeader("content-disposition", "attachment;fileName="+imageFileName);
-		
-		File file=new File(BoardFileService.IMAGE_REPO+"/"+imageFileName);
+	public void download(@RequestParam("file") String fileName, HttpServletResponse response) throws Exception {
+		response.addHeader("content-disposition", "attachment;fileName="+fileName);
+		File file=new File(BoardFileService.IMAGE_REPO+"\\"+fileName);
 		FileInputStream in=new FileInputStream(file);
-		FileCopyUtils.copy(in,  response.getOutputStream());
+		FileCopyUtils.copy(in, response.getOutputStream());
 		in.close();
 	}
 	
-	@GetMapping("modify_form")
-	public String modify_form(@RequestParam int writeNo, Model model) {
-		bs.contentView(writeNo, model);
-		return "board/modify_form";
+	@GetMapping("modifyForm")
+	public String modifyForm(@RequestParam int product_no, Model model) {
+		bs.contentView(product_no, model);
+		return "board/modifyForm";
 	}
 	
 	@PostMapping("modify")
@@ -83,22 +81,22 @@ public class BoardController {
 	}
 	
 	@GetMapping("delete")
-	public void delete(@RequestParam int writeNo,
-					   @RequestParam String imageFileName,
+	public void delete(@RequestParam int product_no,
+					   @RequestParam String product_img,
 	           		   HttpServletRequest request,
 	           		   HttpServletResponse response) throws Exception {
-		String message=bs.boardDelete(writeNo, imageFileName, request);
+		String message=bs.boardDelete(product_no, product_img, request);
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.print(message);
 		
 	}
 	
-	@GetMapping("qna")
-	public String qna(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
-		bs.qna(model, num);
-		return "board/qna";
-	}
+//	@GetMapping("qna")
+//	public String qna(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
+//		bs.qna(model, num);
+//		return "board/qna";
+//	}
 	
 	
 }

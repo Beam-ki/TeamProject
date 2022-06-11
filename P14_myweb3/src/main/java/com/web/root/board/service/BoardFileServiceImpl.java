@@ -23,6 +23,7 @@ public class BoardFileServiceImpl implements BoardFileService {
 
 	@Override
 	public String saveFile(MultipartFile file) {
+
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyMMddHHmmss-");
 		Calendar calendar=Calendar.getInstance();
 		

@@ -42,8 +42,14 @@
 			<c:forEach var="dto" items="${boardList }">
 				<div class="product-board">
 	                <div class="product">
-	                    <div class="pro-thumbnail"><a href="${contextPath }/board/contentView?product_img=${dto.product_img}">${dto.product_img }</a></div>
-	                    <p class="pro-title"><a href="#">${dto.product_title }</a></p>
+	                    <div class="pro-thumbnail">
+	                    	<a href="${contextPath }/board/contentView?product_no=${dto.product_no}">
+	                    		<img src="${contextPath }/board/download?file=${dto.product_img }" width="100px" height="100px">
+	                    	</a>
+	                    </div>
+	                    <p class="pro-title">
+	                    	<a href="${contextPath }/board/contentView?product_no=${dto.product_no}">${dto.product_title }</a>
+	                    </p>
 	                </div>
 	            </div>
 			</c:forEach>
@@ -56,7 +62,7 @@
 					</td>
 				</tr>
             </table>
-            <input type="button" value="글쓰기" onclick="location.href='writeForm'">
+            <a href="/root/board/writeForm" class="btn btn-submit">글쓰기</a>
         </section>
     </div>
     <!-- footer -->
