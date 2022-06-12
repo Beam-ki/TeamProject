@@ -139,7 +139,8 @@ public class MemberController implements MemberSession {
 			mv.setViewName("/member/login");
 			return mv;
 		}else {
-			session.setAttribute("id", member.getId());
+//			session.setAttribute("id", member.getId());
+			session.setAttribute(LOGIN, member.getId());
 			mv.addObject("session",session);
 			mv.addObject("result", result);
 			mv.setViewName("redirect:/index");

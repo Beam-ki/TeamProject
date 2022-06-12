@@ -18,20 +18,20 @@
             <ul class="gnb-lnb">
                 <li class="left-nav home"><a href="/root/index"><span>중고</span>마켓</a></li>
                 <C:choose>
-			    	<C:when test="${not empty id }"><li class="right-nav"><a href="/root/board/qna">문의 하기</a></li></C:when>
+			    	<C:when test="${not empty loginUser }"><li class="right-nav"><a href="/root/board/qna">문의 하기</a></li></C:when>
                 </C:choose>
                 <C:choose>
-                <C:when test="${empty id }"><li class="right-nav"><a href="/root/member/register_form">회원가입</a></li></C:when>
+                <C:when test="${empty loginUser }"><li class="right-nav"><a href="/root/member/register_form">회원가입</a></li></C:when>
                 </C:choose>
                 <C:choose>
-			    	<C:when test="${not empty id }"><li class="right-nav"><a href="/root/member/memberinfo">내 정보 보기</a></li></C:when>
+			    	<C:when test="${not empty loginUser }"><li class="right-nav"><a href="/root/member/memberinfo">내 정보 보기</a></li></C:when>
                 </C:choose>
                 <C:choose>
-			    	<C:when test="${not empty id }"><li class="right-nav"><a href="/root/board/boardAllList">판매 게시판</a></li></C:when>
+			    	<C:when test="${not empty loginUser }"><li class="right-nav"><a href="/root/board/boardAllList">판매 게시판</a></li></C:when>
                 </C:choose>
                 <C:choose>
-			    	<C:when test="${empty id }"><li class="right-nav"><a href="/root/member/login">로그인</a></li></C:when>
-			    	<C:when test="${not empty id }"><li class="right-nav"><a href="/root/member/logouttest">로그아웃</a></li></C:when>
+			    	<C:when test="${empty loginUser }"><li class="right-nav"><a href="/root/member/login">로그인</a></li></C:when>
+			    	<C:when test="${not empty loginUser }"><li class="right-nav"><a href="/root/member/logouttest">로그아웃</a></li></C:when>
 		  		</C:choose>
             </ul>
         </nav>
