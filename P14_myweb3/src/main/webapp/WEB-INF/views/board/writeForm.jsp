@@ -35,17 +35,7 @@
     <!-- container -->
     <div class="container">
         <!-- nav -->
-        <nav>
-            <ul class="gnb-lnb">
-                <li class="left-nav home"><a href="/root/login"><span>중고</span>마켓</a></li>
-                <li class="left-nav clicked"><a href="/root/board/boardAllList">팝니다🙌</a></li>
-                <li class="left-nav"><a href="root/board/qna">문의하기</a></li>
-                <li class="right-nav first"><a href="">로그아웃</a></li>
-                <li class="right-nav"><a href="">마이페이지</a></li>
-                <li class="right-nav profile-ico"><a href=""><img src="../img/ico-profile.png" alt=""></a></li>
-            </ul>
-        </nav>
-
+		<c:import url="../default/nav.jsp"/>
         <!-- header -->
         <header>
             <h1>안쓰는 물건 사고팔땐,<br><span>중고</span>마켓</h1>
@@ -56,10 +46,10 @@
             <h2>게시글 등록하기</h2>
             <form action="${contextPath }/board/writeSave" enctype="multipart/form-data" method="post">
                 <fieldset>
+                	<input type="hidden" name="product_writer" value="${loginUser }">
                     <p class="wr-title">제목<input type="text" name="product_title" placeholder="제목을 입력해주세요" required></p>
-                    <textarea name="product_main" id="wr-con" cols="130" rows="20" placeholder="본문 내용을 입력해주세요." required>
-                    </textarea>
-                    <input type="file" class="file" name="product_file">
+                    <textarea name="product_main" id="wr-con" cols="130" rows="20" placeholder="본문 내용을 입력해주세요." required></textarea>
+                    <input type="file" class="file" name="product_img" onchange="readURL(this)">
                     <img id="preview" src="#" width="100px" height="100px">
                     <div class="btn-wrapper">
                         <div class="btn btn-submit"><a href="/root/board/boardAllList">&lt; back</a></div>
@@ -70,16 +60,7 @@
             </form>
         </section>
     </div>
-
-    <!-- footer -->
-    <footer>
-        <div class="container">
-            <a href="https://github.com/KoreaAcademeTeamFive" target="_blank"><img src="../img/icon-github.png" alt="" class="ico-github"></a>
-            <div class="text">
-                <p>안범기 유동준 이승정 이덕현</p>
-                <p>Copyright 2022. TeamFive. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+	<!-- footer -->
+    <c:import url="../default/footer.jsp"></c:import>
 </body>
 </html>

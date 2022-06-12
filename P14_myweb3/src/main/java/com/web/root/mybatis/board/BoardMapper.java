@@ -19,7 +19,7 @@ public interface BoardMapper {
 	
 	public int modify(BoardDTO dto);
 	
-	public int delete(int writeNo);
+	public int delete(int product_no);
 	
 	public int selectBoardCount();
 	

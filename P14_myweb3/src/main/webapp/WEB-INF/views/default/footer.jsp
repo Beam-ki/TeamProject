@@ -5,21 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>footer</title>
-<style>
-.footer{
-	margin:100px 0;
-	text-align:center;
-}
-span{
-	color:maroon;
-	font-size:30px;
-}
-</style>
 </head>
 <body>
-	<div class="footer">
-		<hr>
-		<span>Copyright &copy; Myweb. all rights reserved.</span>
-	</div>
+  	<footer>
+	    <div class="container">
+	        <a href="https://github.com/KoreaAcademeTeamFive" target="_blank"><img src="img/icon-github.png" alt="" class="ico-github"></a>
+	        <div class="text">
+	            <p>안범기 유동준 이승정 이덕현</p>
+	            <p>Copyright 2022. TeamFive. All Rights Reserved.</p>
+	        </div>
+	    </div>
+    </footer>
 </body>
 </html>

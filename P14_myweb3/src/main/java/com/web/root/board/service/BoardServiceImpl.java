@@ -42,14 +42,17 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public String writeSave(MultipartHttpServletRequest mul, HttpServletRequest request) {
 		BoardDTO dto=new BoardDTO();
+		dto.setProduct_writer(mul.getParameter("product_writer"));
 		dto.setProduct_title(mul.getParameter("product_title"));
 		dto.setProduct_main(mul.getParameter("product_main"));
 		MultipartFile file=mul.getFile("product_img");
 		
 //		데이터 가져오는지 테스트
+//		String writer=mul.getParameter("product_writer");
 //		String title=mul.getParameter("product_title");
 //		String main=mul.getParameter("product_main");
 //		String fileName=file.getOriginalFilename();
+//		System.out.println(writer);
 //		System.out.println(title);
 //		System.out.println(main);
 //		System.out.println(fileName);
@@ -134,6 +137,7 @@ public class BoardServiceImpl implements BoardService {
 		}
 		return bfs.getMessage(request, msg, url);
 	}
+	
 
 //	@Override
 //	public void qna(Model model, int num) {

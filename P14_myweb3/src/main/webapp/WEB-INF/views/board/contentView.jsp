@@ -15,14 +15,7 @@
 <body>
     <div class="container">
         <!-- nav -->
-        <nav>
-            <ul class="gnb-lnb">
-                <li class="left-nav home"><a href="/root/index"><span>중고</span>마켓</a></li>
-                <li class="left-nav clicked"><a href="/root/board/boardAllList">팝니다🙌</a></li>
-                <li class="left-nav"><a href="/root/board/qna">문의하기</a></li>
-            </ul>
-        </nav>
-
+		<c:import url="../default/nav.jsp"/>
         <!-- header -->
         <header>
             <h1>안쓰는 물건 사고팔땐, <span>중고</span>마켓</h1>
@@ -74,16 +67,7 @@
 			<input type="button" value="글목록" onclick="location.href='${contextPath}/board/boardAllList'">
         </section>
     </div>
-
-    <!-- footer -->
-    <footer>
-        <div class="container">
-            <a href="https://github.com/KoreaAcademeTeamFive" target="_blank"><img src="../img/icon-github.png" alt="" class="ico-github"></a>
-            <div class="text">
-                <p>안범기 유동준 이승정 이덕현</p>
-                <p>Copyright 2022. TeamFive. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+	<!-- footer -->
+    <c:import url="../default/footer.jsp"></c:import>
 </body>
 </html>

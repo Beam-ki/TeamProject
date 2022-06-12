@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>   
-<%@taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,29 +12,9 @@
     <link rel="stylesheet" href="css/index-style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- nav -->
-        <nav>
-            <ul class="gnb-lnb">
-                <li class="left-nav home"><a href="/root/index"><span>중고</span>마켓</a></li>
-                <C:choose>
-			    	<C:when test="${not empty loginUser }"><li class="right-nav"><a href="/root/board/qna">문의 하기</a></li></C:when>
-                </C:choose>
-                <C:choose>
-                <C:when test="${empty loginUser }"><li class="right-nav"><a href="/root/member/register_form">회원가입</a></li></C:when>
-                </C:choose>
-                <C:choose>
-			    	<C:when test="${not empty loginUser }"><li class="right-nav"><a href="/root/member/memberinfo">내 정보 보기</a></li></C:when>
-                </C:choose>
-                <C:choose>
-			    	<C:when test="${not empty loginUser }"><li class="right-nav"><a href="/root/board/boardAllList">판매 게시판</a></li></C:when>
-                </C:choose>
-                <C:choose>
-			    	<C:when test="${empty loginUser }"><li class="right-nav"><a href="/root/member/login">로그인</a></li></C:when>
-			    	<C:when test="${not empty loginUser }"><li class="right-nav"><a href="/root/member/logouttest">로그아웃</a></li></C:when>
-		  		</C:choose>
-            </ul>
-        </nav>
+	<div class="container">
+		<!-- nav -->
+		<c:import url="default/nav.jsp"/>
         <!-- header -->
         <header>
             <h1>편리한 중고 거래 플랫폼,<br><span>중고</span>마켓</h1>
@@ -56,19 +36,14 @@
         <article>
             <div class="container">
                 <h2>지금 중고마켓과 함께 하세요!</h2>
-                <div class="btn"><a href="/root/member/register">가입하기</a></div>
+                <c:choose>
+                <c:when test="${empty loginUser }"><div class="btn"><a href="/root/member/register_form">가입하기</a></div></c:when>
+                <c:when test="${not empty loginUser }"><h2>${loginUser }님 환영합니다</h2></c:when>
+                </c:choose>
             </div>
         </article>
     </section>
-   <!-- footer -->
-   <footer>
-    <div class="container">
-        <a href="https://github.com/KoreaAcademeTeamFive" target="_blank"><img src="img/icon-github.png" alt="" class="ico-github"></a>
-        <div class="text">
-            <p>안범기 유동준 이승정 이덕현</p>
-            <p>Copyright 2022. TeamFive. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
+    <!-- footer -->
+    <c:import url="default/footer.jsp"></c:import>
 </body>
 </html>

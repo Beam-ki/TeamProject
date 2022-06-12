@@ -65,7 +65,7 @@
                     <img id="preview" src="${contextPath }/board/download?file=${data.product_img }" width="100px" height="100px">
                     <div class="btn-wrapper">
                         <div class="btn btn-submit"><a href="${contextPath }/board/contentView?product_no=${data.product_no}">&lt; back</a></div>
-                        <input class="btn" type="submit" value="수정완료">
+                        <input class="btn btn-submit" type="submit" value="수정완료">
                     </div>
                     
                 </fieldset>

@@ -91,6 +91,7 @@ public class BoardController {
 		out.print(message);
 		
 	}
+
 	
 //	@GetMapping("qna")
 //	public String qna(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
