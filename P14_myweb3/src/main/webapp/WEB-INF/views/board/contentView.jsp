@@ -9,6 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>맘스터치 싸이버거 기프티콘 팝니다.</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+   	function deleteOk(){
+   		if(!confirm("정말로 삭제하시겠습니까?")){
+   			return false;
+   		}else{
+   			location.href='${contextPath}/board/delete?product_no=${data.product_no }&product_img=${data.product_img }'
+   		}
+   	}
+    </script>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/sub-style.css">
 </head>
@@ -61,8 +71,8 @@
 			<c:if test="${data.product_writer==loginUser }">
 				<input type="button" 
 				       value="수정" onclick="location.href='${contextPath}/board/modifyForm?product_no=${data.product_no }'">
-				<input type="button" 
-			           value="삭제" onclick="location.href='${contextPath}/board/delete?product_no=${data.product_no }&product_img=${data.product_img }'">
+			    <input type="button" value="삭제" onclick="deleteOk()">       
+			           
 			</c:if>
 			<input type="button" value="글목록" onclick="location.href='${contextPath}/board/boardAllList'">
         </section>

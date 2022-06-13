@@ -59,8 +59,8 @@
                     <input type="hidden" name="product_no" value="${data.product_no }">
 					<input type="hidden" name="originFileName" value="${data.product_img }"><!-- 이미지 변경시 삭제에 사용하는 값 -->
                     
-                    <p class="wr-title">제목<input type="text" name="product_title" value="${data.product_title }"></p>
-                    <textarea name="product_main" id="wr-con" cols="130" rows="20"><c:out value="${data.product_main }"/></textarea>
+                    <p class="wr-title">제목<input type="text" name="product_title" value="${data.product_title }" required></p>
+                    <textarea name="product_main" id="wr-con" cols="130" rows="20" required><c:out value="${data.product_main }"/></textarea>
                     <input type="file" class="file" name="product_img" onchange="readURL(this)">
                     <img id="preview" src="${contextPath }/board/download?file=${data.product_img }" width="100px" height="100px">
                     <div class="btn-wrapper">
