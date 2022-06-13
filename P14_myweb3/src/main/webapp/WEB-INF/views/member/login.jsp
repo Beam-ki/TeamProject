@@ -46,15 +46,7 @@
     </div>
 
     <!-- footer -->
-    <footer>
-        <div class="container">
-            <a href="https://github.com/KoreaAcademeTeamFive" target="_blank"><img src="../img/icon-github.png" alt="" class="ico-github"></a>
-            <div class="text">
-                <p>안범기 유동준 이승정 이덕현</p>
-                <p>Copyright 2022. TeamFive. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <c:import url="../default/footer.jsp"></c:import>
 </body>
 </html>
 
