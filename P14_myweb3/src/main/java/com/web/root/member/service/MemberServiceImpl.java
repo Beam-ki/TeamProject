@@ -35,9 +35,21 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void memberInfo(Model model) {
-		model.addAttribute("memberList", mapper.memberInfo());
+	public void mypage(Model model, String userid) {
+		model.addAttribute("member", mapper.info(userid));
 	}
+	
+	@Override
+	public void info(Model model, String userid) {
+		model.addAttribute("info", mapper.info(userid));
+	}
+	
+//	@Override
+//	public void infoUpdate(Model model, String id) {
+//		model.addAttribute("info", mapper.infoUpdate(id));
+//		
+//	}
+
 
 	@Override
 	public int register(MemberDTO member) {
@@ -47,11 +59,6 @@ public class MemberServiceImpl implements MemberService {
 			e.printStackTrace();
 			return 0;
 		}
-	}
-
-	@Override
-	public void info(Model model, String userid) {
-		model.addAttribute("info", mapper.info(userid));
 	}
 
 	@Override

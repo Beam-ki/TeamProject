@@ -10,8 +10,9 @@ public interface MemberService {
 
 	//public int user_check(HttpServletRequest request);
 	public int user_check(String id);
-	public void memberInfo(Model model);
-	public int register(MemberDTO member);
+	public void mypage(Model model, String userid);
 	public void info(Model model, String userid);
+//	public void infoUpdate(Model model, String id);
+	public int register(MemberDTO member);
 	public int logintest(MemberDTO member);
 }

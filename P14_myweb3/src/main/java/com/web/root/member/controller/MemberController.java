@@ -62,12 +62,40 @@ public class MemberController implements MemberSession {
 		return "redirect:/index";
 	}
 	
-	@GetMapping("memberInfo")
-	public String memberInfo(Model model) {
-		ms.memberInfo(model);
-		return "member/memberInfo";
+	@RequestMapping("/mypage")
+	public String mypage(Model model, @RequestParam("id") String userid) {
+		ms.mypage(model, userid);
+		return "member/mypage";
 	}
 	
+	@RequestMapping("/info")
+	public String info(Model model, @RequestParam("id") String userid) {
+		ms.info(model, userid);
+		return "member/memberinfo";
+	}
+	
+//	@PostMapping("/infoUpdate")
+//	public String infoUpdate(MemberDTO dto,
+//							 Model model,
+//							 @RequestParam("name") String name,
+//							 @RequestParam("id") String id,
+//							 @RequestParam("pw") String pw,
+//							 @RequestParam("nickname") String nickname,
+//							 @RequestParam("email") String email) throws Exception {
+////		String name=request.getParameter("name");
+////		String id=request.getParameter("id");
+////		String pw=request.getParameter("pw");
+////		String nickname=request.getParameter("nickname");
+////		String email=request.getParameter("email");
+////		System.out.println("name");
+////		System.out.println("id");
+////		System.out.println("pw");
+////		System.out.println("nickname");
+////		System.out.println("email");
+//		ms.infoUpdate(model, );
+//		return "member/mypage";
+//	}
+		
 	@GetMapping("boardAllList")
 	public String boardAllList() {
 		return "board/boardAllList";
@@ -118,12 +146,6 @@ public class MemberController implements MemberSession {
 			mv.setViewName("/member/login");
 			return mv;
 		}
-	}
-	
-	@RequestMapping("/info")
-	public String info(Model model, @RequestParam("id") String userid) {
-		ms.info(model, userid);
-		return "member/info";
 	}
 	
 	@RequestMapping("/logintest")

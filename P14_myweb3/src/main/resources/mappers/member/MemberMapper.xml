@@ -17,17 +17,25 @@
 		select count(*) from membership1 where id=#{id}
 	</select>
 	
-	<select id="memberInfo" resultMap="member">
-		select * from membership1
+	<select id="mypage" resultMap="member">
+		select * from membership1 where id=#{id}
 	</select>
+	
+	<select id="info" resultMap="member">
+		select * from membership1 where id=#{id}
+	</select>
+	
+<!-- 	<update id="infoUpdate"> -->
+<!-- 		update membership1 set name=#{name}, -->
+<!-- 							   id=#{id}, -->
+<!-- 							   pw=#{pw}, -->
+<!-- 		                       nickname=#{nickname}, -->
+<!-- 		                       email=#{email} where id=#{id} -->
+<!-- 	</update> -->
 	
 	<insert id="register">
 		insert into membership1 values(#{id}, #{pw}, #{name}, #{email}, #{nickname})
 	</insert>
-	
-	<select id="info" resultMap="member">
-		select * from membership1 where id=#{userid}
-	</select>
 	
 	<select id="logintest" resultType="Integer">
 		select count(*) from membership1 where id=#{id} and pw=#{pw}

@@ -32,8 +32,8 @@
 				</c:choose>
 				<c:choose>
 	   				<c:when test="${not empty loginUser }">
-	   					<li class="right-nav clicked"><a href="/root/member/memberinfo">마이페이지</a></li>
-	   					<li class="right-nav profile-ico"><a href="mypage.html"><img src="img/ico-profile.png" alt=""></a></li>
+	   					<li class="right-nav clicked"><a href="/root/member/mypage?id=${loginUser }">마이페이지</a></li>
+	   					<li class="right-nav profile-ico"><a href="/root/member/mypage?id=${loginUser }"><img src="img/ico-profile.png" alt=""></a></li>
 	   				</c:when>
 	            </c:choose>
 	        </ul>

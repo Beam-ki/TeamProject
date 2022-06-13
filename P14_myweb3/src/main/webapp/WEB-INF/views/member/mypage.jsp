@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<c:set var="contextPath" value="${pageContext.request.contextPath }"/>   
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -26,30 +27,9 @@
             <div class="mypage">
                 <div class="mypage-nav">
                     <ul class="mypage-rnb">
-                        <li class="clicked"><a href="mypage.html">내 정보 수정</a></li>
+                        <li class="clicked"><a href="info?id=${member.id }">내 정보 수정</a></li>
                         <li><a href="mypage-product.html">내가 쓴 글</a></li>
-                        <li><a href="mypage-mileage.html">마일리지 내역</a></li>
                     </ul>
-                </div>
-                <div class="mypage-con">
-                    <form action="" method="post">
-                        <fieldset>
-                            <label for="name">이름</label><input type="text" name="name" placeholder="test" required disabled><br>
-        
-                            <label for="id">아이디</label><input type="text" name="id" placeholder="test" required disabled><br>
-        
-                            <label for="password">비밀번호</label><input type="password" name="password" placeholder="비밀번호를 입력해주세요" required ><br>
-        
-                            <label for="password-check">비밀번호 확인</label><input type="password" name="password-check" placeholder="비밀번호를 입력해주세요" required><br>
-        
-                            <label for="nickname">닉네임</label><input type="text" name="nickname" placeholder="test" required disabled><br>
-        
-                            <label for="email">이메일</label><input type="email" name="email" placeholder="test@test.com" required disabled><br>
-                            <div style="text-align: center;" class="btn-wrapper">
-                                <input class="btn btn-submit" type="submit" value="수정하기">
-                            </div>
-                        </fieldset>
-                    </form>
                 </div>
             </div>
             
