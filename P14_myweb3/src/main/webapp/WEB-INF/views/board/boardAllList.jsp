@@ -33,20 +33,32 @@
 					<th>등록된 글이 없습니다</th>
 				</tr>
 			</c:if>
-			<c:forEach var="dto" items="${boardList }">
-				<div class="product-board">
-	                <div class="product">
-	                    <div class="pro-thumbnail">
-	                    	<a href="${contextPath }/board/contentView?product_no=${dto.product_no}">
-	                    		<img src="${contextPath }/board/download?file=${dto.product_img }" width="100px" height="100px">
-	                    	</a>
-	                    </div>
-	                    <p class="pro-title">
-	                    	<a href="${contextPath }/board/contentView?product_no=${dto.product_no}">${dto.product_title }</a>
-	                    </p>
-	                </div>
-	            </div>
-			</c:forEach>
+			
+			<c:set var="i" value="0"/>
+			<c:set var="j" value="4"/>
+			<table>
+				<c:forEach var="dto" items="${boardList }">
+				<input type="hidden" name="type" value="A">
+					<c:if test="{i%j==0}">
+					<tr>
+					</c:if>
+						<td>
+							<div class="pro-thumbnail">
+		                    	<a href="${contextPath }/board/contentView?product_no=${dto.product_no}">
+		                    		<img src="${contextPath }/board/download?file=${dto.product_img }" width="100px" height="100px">
+		                    	</a>
+	                    	</div>
+	                    	<p class="pro-title">
+	                    		<a href="${contextPath }/board/contentView?product_no=${dto.product_no}">${dto.product_title }</a>
+	                   		</p>
+						</td>
+					<c:if test="${i%j==j-1}">
+					<tr>
+					</c:if>
+					<c:set var="i" value="${i+1}"/>
+				</c:forEach>	
+			</table>
+			
             <table>
             	<tr>
 					<td colspan="6" align="center">

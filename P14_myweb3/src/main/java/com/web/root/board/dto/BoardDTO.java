@@ -23,6 +23,13 @@ public class BoardDTO {
 	private String product_wait;
 	private String product_soldout;
 	private String product_writer;
+	private String product_type;
+	//private String product_price;
+	private String product_trade;
+	private String product_status;
+	private int product_price;
+	private String product_status1;
+	//private String product_status2;
 	
 	
 	public int getProduct_no() {
@@ -79,7 +86,46 @@ public class BoardDTO {
 	public void setProduct_writer(String product_writer) {
 		this.product_writer = product_writer;
 	}
-	
-	
-	
+	public String getProduct_type() {
+		return product_type;
+	}
+	public void setproduct_type(String product_type) {
+		this.product_type = product_type;
+	}
+//	public String getProduct_price() {
+//		return product_price;
+//	}
+//	public void setproduct_price(String product_price) {
+//		this.product_price = product_price;
+//	}
+	public String getProduct_status() {
+		return product_status;
+	}
+	public void setProduct_status(String Product_status) {
+		this.product_status = Product_status;
+	}
+	public String getProduct_trade() {
+		return product_trade;
+	}
+	public void setProduct_trade(String Product_trade) {
+		this.product_trade = Product_trade;
+	}
+	public String getproduct_status1() {
+		return product_status1;
+	}
+	public void setproduct_status1(String product_status1) {
+		this.product_status1 = product_status1;
+	}
+//	public String getproduct_status2() {
+//		return product_status2;
+//	}
+//	public void setproduct_status2(String product_status2) {
+//		this.product_status2 = product_status2;
+//	}
+	public int getProduct_price() {
+		return product_price;
+	}
+	public void setproduct_price(int product_price) {
+		this.product_price = product_price;
+	}
 }

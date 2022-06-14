@@ -11,6 +11,8 @@ public interface BoardMapper {
 //	public List<BoardDTO> boardAllList();
 	public List<BoardDTO> boardAllList(@Param("s") int start, @Param("e") int end);
 	
+	public List<BoardDTO> qna(@Param("s") int start, @Param("e") int end);
+	
 	public int writeSave(BoardDTO dto);
 	
 	public BoardDTO contentView(int product_no);
@@ -23,5 +25,4 @@ public interface BoardMapper {
 	
 	public int selectBoardCount();
 	
-//	public List<BoardDTO> qna(@Param("s") int start, @Param("e") int end);
 }

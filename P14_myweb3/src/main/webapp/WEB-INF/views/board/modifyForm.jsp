@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시글 등록</title>
+    <title>게시글 수정</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 	function readURL(input){
@@ -35,17 +35,7 @@
     <!-- container -->
     <div class="container">
         <!-- nav -->
-        <nav>
-            <ul class="gnb-lnb">
-                <li class="left-nav home"><a href="/root/login"><span>중고</span>마켓</a></li>
-                <li class="left-nav clicked"><a href="/root/board/boardAllList">팝니다🙌</a></li>
-                <li class="left-nav"><a href="root/board/qna">문의하기</a></li>
-                <li class="right-nav first"><a href="">로그아웃</a></li>
-                <li class="right-nav"><a href="">마이페이지</a></li>
-                <li class="right-nav profile-ico"><a href=""><img src="../img/ico-profile.png" alt=""></a></li>
-            </ul>
-        </nav>
-
+		<c:import url="../default/nav.jsp"/>
         <!-- header -->
         <header>
             <h1>안쓰는 물건 사고팔땐,<br><span>중고</span>마켓</h1>
@@ -53,35 +43,45 @@
 
         <!-- section -->
         <section class="writing">
-            <h2>게시글 등록하기</h2>
+            <h2>게시글수정</h2>
             <form action="${contextPath }/board/modify" enctype="multipart/form-data" method="post">
                 <fieldset>
-                    <input type="hidden" name="product_no" value="${data.product_no }">
-					<input type="hidden" name="originFileName" value="${data.product_img }"><!-- 이미지 변경시 삭제에 사용하는 값 -->
-                    
+                    <input type="hidden" name="product_type" value="A">
+                	<input type="hidden" name="product_writer" value="${loginUser }">
                     <p class="wr-title">제목<input type="text" name="product_title" value="${data.product_title }" required></p>
-                    <textarea name="product_main" id="wr-con" cols="130" rows="20" required><c:out value="${data.product_main }"/></textarea>
+                    <textarea name="product_main" id="wr-con" cols="130" rows="20" value="${data.product_main }" required></textarea>
                     <input type="file" class="file" name="product_img" onchange="readURL(this)">
-                    <img id="preview" src="${contextPath }/board/download?file=${data.product_img }" width="100px" height="100px">
+                    <img id="preview" src="#" width="100px" height="100px">
+                    <fieldset>
+                    <p>금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="product_price" placeholder="금액 입력해주세요" value="${data.product_price }" required></p>
+                    
+                     <h4>흥정 여부</h4>
+                    <label><input type="radio" name="product_status1" value="흥정 가능"> 흥정 가능</label>           
+                    <label><input type="radio" name="product_status1" value="흥정 불가능">흥정 불가능</label>           
+                    
+                    <h4>상품 상태</h4>
+                    <label><input type="radio" name="product_status" value="새 상품"> 새 상품</label>           
+                    <label><input type="radio" name="product_status" value="중고 상품"> 중고 상품</label>
+                    
+                    <h4>거래 방법</h4>
+                    <label><input type="radio" name="product_trade" value="직거래"> 직거래</label>           
+                    <label><input type="radio" name="product_trade" value="택배거래"> 택배거래</label>    
+                    <label><input type="radio" name="product_trade" value="기프티콘"> 기프티콘</label>   
+                    
+                </fieldset>
+                    
                     <div class="btn-wrapper">
-                        <div class="btn btn-submit"><a href="${contextPath }/board/contentView?product_no=${data.product_no}">&lt; back</a></div>
-                        <input class="btn btn-submit" type="submit" value="수정완료">
+                        <div class="btn btn-submit"><a href="/root/board/boardAllList">&lt; 취소</a></div>
+                        <input class="btn" type="submit" value="수정하기">
+                        <input type="button" value="글목록" onclick="location.href='${contextPath }/board/boardAllList'">
                     </div>
                     
                 </fieldset>
+                
             </form>
         </section>
     </div>
-
-    <!-- footer -->
-    <footer>
-        <div class="container">
-            <a href="https://github.com/KoreaAcademeTeamFive" target="_blank"><img src="../img/icon-github.png" alt="" class="ico-github"></a>
-            <div class="text">
-                <p>안범기 유동준 이승정 이덕현</p>
-                <p>Copyright 2022. TeamFive. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+	<!-- footer -->
+    <c:import url="../default/footer.jsp"></c:import>
 </body>
 </html>

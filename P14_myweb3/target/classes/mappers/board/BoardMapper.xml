@@ -15,6 +15,11 @@
 		<result property="product_wait" column="product_wait"/>
 		<result property="product_soldout" column="product_soldout"/>
 		<result property="product_writer" column="product_writer"/>
+		<result property="product_type" column="product_type"/>
+		<result property="product_price" column="product_price"/>
+		<result property="product_trade" column="product_trade"/>
+		<result property="product_status" column="product_status"/>
+		<result property="product_status1" column="product_status1"/>
 	</resultMap>
 	
 <!-- 	<select id="boardAllList" resultMap="board"> -->
@@ -24,12 +29,23 @@
 		select B.* from
 		(select rownum rn, A.* from
 		(select * from board_product order by product_no desc)A )B
+		where 1=1
+		and rn between #{s} and #{e}
+		and B.product_type='A'
+		
+	</select>
+	<select id="qna" resultMap="board">
+		select B.* from
+		(select rownum rn, A.* from
+		(select * from board_product order by product_no desc)A )B
 		where rn between #{s} and #{e}
+		and B.product_type='B'
+		
 	</select>
 	  
 	<insert id="writeSave">
-    	insert into board_product(product_no, product_writer, product_title, product_main, product_img)
-    	values(mvc_board_seq.nextval, #{product_writer}, #{product_title}, #{product_main}, #{product_img})
+    	insert into board_product(product_no, product_writer, product_title, product_main, product_img ,product_type,product_price,product_trade,product_status,product_status1)
+    	values(mvc_board_seq.nextval, #{product_writer}, #{product_title}, #{product_main}, #{product_img},#{product_type},#{product_price},#{product_trade},#{product_status},#{product_status1})
 	</insert>
 	
 	<select id="contentView" resultMap="board">
@@ -44,7 +60,12 @@
 	<update id="modify">
 		update board_product set product_title=#{product_title},
 						         product_main=#{product_main},
-						         product_img=#{product_img} where product_no=#{product_no}
+						         product_img=#{product_img},
+						         product_type=#{product_type},
+						         product_price=#{product_price},
+						         product_trade=#{product_trade},
+						         product_status=#{product_status},
+						         product_status1=#{product_status1} where product_no=#{product_no}
 	</update>
 	
 	<delete id="delete">

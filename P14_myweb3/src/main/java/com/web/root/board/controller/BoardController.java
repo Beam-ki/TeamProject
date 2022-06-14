@@ -33,11 +33,22 @@ public class BoardController {
 		bs.boardAllList(model, num);
 		return "board/boardAllList";
 	}
+	@GetMapping("qna")
+	public String qna(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
+		bs.qna(model, num);
+		return "board/qna";
+	}
+	
 	
 	@GetMapping("writeForm")
 	public String writeForm() {
 		return "board/writeForm";
 	}
+	@GetMapping("qnawriteForm")
+	public String qnawriteForm() {
+		return "board/qnawriteForm";
+	}
+	
 	
 	@PostMapping("writeSave")
 	public void writeSave(MultipartHttpServletRequest mul, 
@@ -47,12 +58,18 @@ public class BoardController {
 	    response.setContentType("text/html; charset=utf-8");
 	    PrintWriter out = response.getWriter();
 	    out.print(message);
+	    
 	}
 	
 	@GetMapping("contentView")
 	public String contentView(@RequestParam int product_no, Model model) {
 		bs.contentView(product_no, model);
 		return "board/contentView";
+	}
+	@GetMapping("qnaView")
+	public String qnaView(@RequestParam int product_no, Model model) {
+		bs.contentView(product_no, model);
+		return "board/qnaView";
 	}
 	
 	@GetMapping("download")
@@ -92,7 +109,6 @@ public class BoardController {
 		
 	}
 
-	
 //	@GetMapping("qna")
 //	public String qna(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
 //		bs.qna(model, num);

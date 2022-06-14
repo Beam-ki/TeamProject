@@ -25,7 +25,7 @@ public class BoardServiceImpl implements BoardService {
 //		model.addAttribute("boardList", mapper.boardAllList());
 //	}
 	public void boardAllList(Model model, int num) {
-		int pageLetter=3; // 한 페이지당 글목록 수
+		int pageLetter=8; // 한 페이지당 글목록 수
 		int allCount=mapper.selectBoardCount(); // 전체 글 수
 		
 		int repeat=allCount/pageLetter; // 마지막 페이지 번호
@@ -45,6 +45,12 @@ public class BoardServiceImpl implements BoardService {
 		dto.setProduct_writer(mul.getParameter("product_writer"));
 		dto.setProduct_title(mul.getParameter("product_title"));
 		dto.setProduct_main(mul.getParameter("product_main"));
+		dto.setproduct_type(mul.getParameter("product_type"));
+		dto.setproduct_price((Integer.parseInt (mul.getParameter("product_price"))));
+		dto.setProduct_trade(mul.getParameter("product_trade"));
+		dto.setProduct_status(mul.getParameter("product_status"));
+		dto.setproduct_status1(mul.getParameter("product_status1"));
+		//dto.setproduct_status2(mul.getParameter("product_status2"));
 		MultipartFile file=mul.getFile("product_img");
 		
 //		데이터 가져오는지 테스트
@@ -58,6 +64,7 @@ public class BoardServiceImpl implements BoardService {
 //		System.out.println(fileName);
 		
 		if(file.getSize()!=0) {	// 이미지 파일이 있을때
+			System.out.println(bfs.saveFile(file));
 			dto.setProduct_img(bfs.saveFile(file));
 		} else {
 			dto.setProduct_img("nan");
@@ -77,6 +84,7 @@ public class BoardServiceImpl implements BoardService {
 			msg="문제가 발생했습니다";
 			url="/board/writeForm";
 		}
+
 		return bfs.getMessage(request, msg, url);
 	}
 
@@ -96,6 +104,11 @@ public class BoardServiceImpl implements BoardService {
 		dto.setProduct_no(Integer.parseInt(mul.getParameter("product_no")));
 		dto.setProduct_title(mul.getParameter("product_title"));
 		dto.setProduct_main(mul.getParameter("product_main"));
+		dto.setproduct_type(mul.getParameter("product_type"));
+		dto.setproduct_price(Integer.parseInt (mul.getParameter("product_price")));
+		dto.setProduct_trade(mul.getParameter("product_trade"));
+		dto.setProduct_status(mul.getParameter("product_status"));
+		dto.setproduct_status1(mul.getParameter("product_status1"));
 		
 		MultipartFile file=mul.getFile("product_img");
 		if(file.getSize()!=0) {
@@ -139,21 +152,21 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 
-//	@Override
-//	public void qna(Model model, int num) {
-//		int pageLetter=3; // 한 페이지당 글목록 수
-//		int allCount=mapper.selectBoardCount(); // 전체 글 수
-//		
-//		int repeat=allCount/pageLetter; // 마지막 페이지 번호
-//		if(allCount%pageLetter!=0) {
-//			repeat+=1;
-//		}
-//		int end=num*pageLetter;
-//		int start=end+1-pageLetter;
-//		
-//		model.addAttribute("repeat", repeat);
-//		model.addAttribute("qnaList", mapper.qna(start, end));
-//	}
+	@Override
+	public void qna(Model model, int num) {
+		int pageLetter=3; // 한 페이지당 글목록 수
+		int allCount=mapper.selectBoardCount(); // 전체 글 수
+		
+		int repeat=allCount/pageLetter; // 마지막 페이지 번호
+		if(allCount%pageLetter!=0) {
+			repeat+=1;
+		}
+		int end=num*pageLetter;
+		int start=end+1-pageLetter;
+		
+		model.addAttribute("repeat", repeat);
+		model.addAttribute("boardList", mapper.qna(start, end));
+	}
 	
 	
 	

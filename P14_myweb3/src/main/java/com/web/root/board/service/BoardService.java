@@ -10,6 +10,8 @@ public interface BoardService {
 //	public void boardAllList(Model model);
 	public void boardAllList(Model model, int num);
 	
+	public void qna(Model model, int num);
+	
 	public String writeSave(MultipartHttpServletRequest mul, HttpServletRequest request);
 	
 	public void contentView(int product_no, Model model);
@@ -17,6 +19,7 @@ public interface BoardService {
 	public String modify(MultipartHttpServletRequest mul, HttpServletRequest request);
 	
 	public String boardDelete(int product_no, String product_img, HttpServletRequest request);
+
 	
 //	public void qna(Model model, int num);
 }

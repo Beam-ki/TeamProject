@@ -43,35 +43,18 @@
 
         <!-- section -->
         <section class="writing">
-            <h2>게시글 등록하기</h2>
+            <h2>문의 게시글 등록하기</h2>
             <form action="${contextPath }/board/writeSave" enctype="multipart/form-data" method="post">
                 <fieldset>
-                    <input type="hidden" name="product_type" value="A">
+                    <input type="hidden" name="product_type" value="B">
                 	<input type="hidden" name="product_writer" value="${loginUser }">
                     <p class="wr-title">제목<input type="text" name="product_title" placeholder="제목을 입력해주세요" required></p>
                     <textarea name="product_main" id="wr-con" cols="130" rows="20" placeholder="본문 내용을 입력해주세요." required></textarea>
                     <input type="file" class="file" name="product_img" onchange="readURL(this)">
                     <img id="preview" src="#" width="100px" height="100px">
-                    <fieldset>
-                    <p>금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="product_price" placeholder="금액 입력해주세요" value="${product_price }" required></p>
-                    
-                     <h4>흥정 여부</h4>
-                    <label><input type="radio" name="product_status1" value="흥정 가능"> 흥정 가능</label>           
-                    <label><input type="radio" name="product_status1" value="흥정 불가능">흥정 불가능</label>           
-                    
-                    <h4>상품 상태</h4>
-                    <label><input type="radio" name="product_status" value="새 상품"> 새 상품</label>           
-                    <label><input type="radio" name="product_status" value="중고 상품"> 중고 상품</label>
-                    
-                    <h4>거래 방법</h4>
-                    <label><input type="radio" name="product_trade" value="직거래"> 직거래</label>           
-                    <label><input type="radio" name="product_trade" value="택배거래"> 택배거래</label>    
-                    <label><input type="radio" name="product_trade" value="기프티콘"> 기프티콘</label>   
-                    
-                </fieldset>
                     
                     <div class="btn-wrapper">
-                        <div class="btn btn-submit"><a href="/root/board/boardAllList">&lt; back</a></div>
+                        <div class="btn btn-submit"><a href="/root/board/qna">&lt; back</a></div>
                         <input class="btn" type="submit" value="등록">
                     </div>
                     
