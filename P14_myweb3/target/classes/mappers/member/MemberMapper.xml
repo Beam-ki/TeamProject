@@ -25,13 +25,13 @@
 		select * from membership1 where id=#{id}
 	</select>
 	
-<!-- 	<update id="infoUpdate"> -->
-<!-- 		update membership1 set name=#{name}, -->
-<!-- 							   id=#{id}, -->
-<!-- 							   pw=#{pw}, -->
-<!-- 		                       nickname=#{nickname}, -->
-<!-- 		                       email=#{email} where id=#{id} -->
-<!-- 	</update> -->
+	<update id="infoUpdate">
+		update membership1 set name=#{name},
+							   id=#{id},
+							   pw=#{pw},
+		                       nickname=#{nickname},
+		                       email=#{email} where id=#{id}
+	</update>
 	
 	<insert id="register">
 		insert into membership1 values(#{id}, #{pw}, #{name}, #{email}, #{nickname})

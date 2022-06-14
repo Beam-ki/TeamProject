@@ -44,12 +44,23 @@ public class MemberServiceImpl implements MemberService {
 		model.addAttribute("info", mapper.info(userid));
 	}
 	
-//	@Override
-//	public void infoUpdate(Model model, String id) {
-//		model.addAttribute("info", mapper.infoUpdate(id));
-//		
-//	}
-
+	@Override
+	public String infoUpdate(MemberDTO member, HttpServletRequest request) {
+		int result=mapper.infoUpdate(member);
+		String msg,url;
+		if(result==1) {
+			msg="내용이 변경되었습니다";
+			url="/member/mypage?id="+member.getId();
+		} else {
+			msg="수정 오류";
+			url="/member/memberinfo?id="+member.getId();
+		}
+		String message=null;
+		String path=request.getContextPath();
+		message="<script>alert('"+msg+"');";
+		message+="location.href='"+path+url+"';</script>";
+		return message;
+	}
 
 	@Override
 	public int register(MemberDTO member) {
@@ -60,7 +71,7 @@ public class MemberServiceImpl implements MemberService {
 			return 0;
 		}
 	}
-
+	
 	@Override
 	public int logintest(MemberDTO member) {
 		int result=mapper.logintest(member);

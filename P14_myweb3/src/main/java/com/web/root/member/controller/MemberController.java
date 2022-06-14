@@ -74,27 +74,15 @@ public class MemberController implements MemberSession {
 		return "member/memberinfo";
 	}
 	
-//	@PostMapping("/infoUpdate")
-//	public String infoUpdate(MemberDTO dto,
-//							 Model model,
-//							 @RequestParam("name") String name,
-//							 @RequestParam("id") String id,
-//							 @RequestParam("pw") String pw,
-//							 @RequestParam("nickname") String nickname,
-//							 @RequestParam("email") String email) throws Exception {
-////		String name=request.getParameter("name");
-////		String id=request.getParameter("id");
-////		String pw=request.getParameter("pw");
-////		String nickname=request.getParameter("nickname");
-////		String email=request.getParameter("email");
-////		System.out.println("name");
-////		System.out.println("id");
-////		System.out.println("pw");
-////		System.out.println("nickname");
-////		System.out.println("email");
-//		ms.infoUpdate(model, );
-//		return "member/mypage";
-//	}
+	@RequestMapping("/infoUpdate")
+	public void infoUpdate(MemberDTO member,
+						   HttpServletRequest request,
+						   HttpServletResponse response) throws Exception {
+		String message=ms.infoUpdate(member, request);
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.print(message);
+	}
 		
 	@GetMapping("boardAllList")
 	public String boardAllList() {
