@@ -78,6 +78,12 @@ public class MemberServiceImpl implements MemberService {
 		int result=mapper.logintest(member);
 		return result;
 	}
+	
+	@Override
+	public int adminLogintest(MemberDTO member) {
+		int result=mapper.adminLogintest(member);
+		return result;
+	}
 
 	@Override
 	public String memberDelete(String id, MemberDTO member, HttpServletRequest request, HttpSession session) {
