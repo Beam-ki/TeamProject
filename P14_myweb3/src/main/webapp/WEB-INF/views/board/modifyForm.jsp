@@ -48,34 +48,33 @@
                 <fieldset>
                     <input type="hidden" name="product_type" value="A">
                 	<input type="hidden" name="product_writer" value="${loginUser }">
+                	<input type="hidden" name="originFileName" value="${data.product_img }">
+                	<input type="hidden" name="product_no" value="${data.product_no }">
                     <p class="wr-title">제목<input type="text" name="product_title" value="${data.product_title }" required></p>
                     <textarea name="product_main" id="wr-con" cols="130" rows="20" required><c:out value="${data.product_main }"/></textarea>
-                    <input type="file" class="file" name="product_img" onchange="readURL(this)">
-                    <img id="preview" src="#" width="100px" height="100px">
-                    <fieldset>
-                    <p>금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="product_price" placeholder="금액 입력해주세요" value="${data.product_price }" required></p>
-                    
-                    <h4>흥정 여부</h4>
-                    <label><input type="radio" name="product_status1" value="흥정 가능" > 흥정 가능</label>           
-                    <label><input type="radio" name="product_status1" value="흥정 불가능">흥정 불가능</label>
-                    
-                    <h4>상품 상태</h4>
-                    <label><input type="radio" name="product_status" value="새 상품"> 새 상품</label>           
-                    <label><input type="radio" name="product_status" value="중고 상품"> 중고 상품</label>
-                    
-                    <h4>거래 방법</h4>
-                    <label><input type="radio" name="product_trade" value="직거래"> 직거래</label>           
-                    <label><input type="radio" name="product_trade" value="택배거래"> 택배거래</label>    
-                    <label><input type="radio" name="product_trade" value="기프티콘"> 기프티콘</label>  
-                    
-                </fieldset>
-                    
+                    <input type="file" class="file" name="product_img" onchange="readURL(this)" value="${data.product_img }">
+                    <img id="preview" src="${contextPath }/board/download?file=${data.product_img }" width="100px" height="100px">
+	                <fieldset>
+	                    <p>금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="product_price" placeholder="금액 입력해주세요" value="${data.product_price }" required></p>
+	                    <h4>흥정 여부</h4>
+	                    <label><input type="radio" name="product_status1" value="흥정 가능" > 흥정 가능</label>           
+	                    <label><input type="radio" name="product_status1" value="흥정 불가능">흥정 불가능</label>
+	                    
+	                    <h4>상품 상태</h4>
+	                    <label><input type="radio" name="product_status" value="새 상품"> 새 상품</label>           
+	                    <label><input type="radio" name="product_status" value="중고 상품"> 중고 상품</label>
+	                    
+	                    <h4>거래 방법</h4>
+	                    <label><input type="radio" name="product_trade" value="직거래"> 직거래</label>           
+	                    <label><input type="radio" name="product_trade" value="택배거래"> 택배거래</label>    
+	                    <label><input type="radio" name="product_trade" value="기프티콘"> 기프티콘</label>  
+	                    
+	                </fieldset>
                     <div class="btn-wrapper">
                         <div class="btn btn-submit"><a href="/root/board/boardAllList">&lt; 취소</a></div>
                         <input class="btn" type="submit" value="수정하기">
                         <input type="button" value="글목록" onclick="location.href='${contextPath }/board/boardAllList'">
                     </div>
-                    
                 </fieldset>
                 
             </form>

@@ -43,6 +43,7 @@ public class BoardServiceImpl implements BoardService {
 	public String writeSave(MultipartHttpServletRequest mul, HttpServletRequest request) {
 		BoardDTO dto=new BoardDTO();
 		dto.setProduct_writer(mul.getParameter("product_writer"));
+		dto.setProduct_writer(mul.getParameter("product_writer"));
 		dto.setProduct_title(mul.getParameter("product_title"));
 		dto.setProduct_main(mul.getParameter("product_main"));
 		dto.setproduct_type(mul.getParameter("product_type"));
@@ -103,12 +104,10 @@ public class BoardServiceImpl implements BoardService {
 		BoardDTO dto=new BoardDTO();
 		dto.setProduct_no(Integer.parseInt(mul.getParameter("product_no")));
 		dto.setProduct_title(mul.getParameter("product_title"));
-		dto.setProduct_title(mul.getParameter("product_no"));
 		dto.setProduct_main(mul.getParameter("product_main"));
-		dto.setproduct_type(mul.getParameter("product_type"));
+//		dto.setproduct_type(mul.getParameter("product_type"));
 		dto.setproduct_price(Integer.parseInt(mul.getParameter("product_price")));
 		dto.setProduct_trade(mul.getParameter("product_trade"));
-		dto.setProduct_trade(mul.getParameter("product_price"));
 		dto.setProduct_status(mul.getParameter("product_status"));
 		dto.setproduct_status1(mul.getParameter("product_status1"));
 		
