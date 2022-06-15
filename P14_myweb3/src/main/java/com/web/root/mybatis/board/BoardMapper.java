@@ -25,4 +25,6 @@ public interface BoardMapper {
 	
 	public int selectBoardCount();
 
+	public void upHit(int writeNo);
+
 }
