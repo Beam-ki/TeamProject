@@ -128,6 +128,7 @@ input[type=checkbox] {
 .writing textarea {
     border: 1px solid #c6c6c6;
     padding: 20px;
+    width: 96%;
 }
 
 .writing .file {
@@ -136,4 +137,88 @@ input[type=checkbox] {
     margin-left: 0;
     float: left;
     padding: 20px;
+}
+
+/* qna */
+.qna-form h2 {
+    margin-bottom: 100px;
+}
+
+.qna-form .title,.content {
+    border: 1px solid #c6c6c6;
+    border-radius: 10px;
+}
+
+.qna-form .title-wrapper {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.qna-form .title-wrapper * {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.qna-form .title-wrapper p {
+    width: 5%;
+    margin: 0;
+}
+
+.qna-form .title-wrapper .title {
+    width: 90%;
+}
+
+.qna-form .title {
+    padding: 20px 0 20px 20px;
+    text-align-last: left;
+}
+
+.qna-form .content {
+    padding: 40px 0 40px 40px;
+    height: 500px;
+    text-align: left;
+}
+
+.emoge {
+    font-size: 70px;
+}
+
+.join-complete {
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 200px;
+    padding: 100px;
+}
+
+.join-complete h1 {
+    margin-bottom: 50px;
+}
+
+.join-complete p {
+    margin: 0;
+    padding: 10px;
+}
+
+.join-complete .btn-wrapper {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.join-complete .btn-wrapper * {
+    border-radius: 15px;
+    padding: 10px 30px;
+}
+
+.join-complete .btn-wrapper a:first-of-type {
+    margin-right: 50px;
+    border: 1px solid rgb(52, 152, 219);
+    color: rgb(52, 152, 219);
+}
+
+.join-complete .btn-wrapper a:last-of-type {
+    background-color: rgb(52, 152, 219);
+    color: white;
 }

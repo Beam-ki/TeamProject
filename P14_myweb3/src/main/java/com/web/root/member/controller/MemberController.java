@@ -131,7 +131,7 @@ public class MemberController implements MemberSession {
 			PrintWriter out=res.getWriter();
 			out.println("<script>alert('회원가입이 완료되었습니다'); </script>");
 			out.flush();
-			mv.setViewName("/member/login");
+			mv.setViewName("/member/successRegister");
 			return mv;
 		}
 	}
