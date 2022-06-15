@@ -20,13 +20,14 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.web.root.board.service.BoardFileService;
 import com.web.root.board.service.BoardService;
+import com.web.root.qna.service.BoardService_qna;
 
 @Controller
 @RequestMapping("board")
 public class BoardController_qna {
 
 	@Autowired
-	BoardService bs;
+	BoardService_qna bs;
 	
 	@GetMapping("boardAllList")
 	public String boardAllList(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
