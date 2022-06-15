@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\ehdwn\OneDrive\바탕 화면\GITHUB\SHM_Back\P14_myweb3"/>
 			<item value="D:\Users\Desktop\회원가입db연동성공본\P14_myweb3"/>
 		</list>
 	</section>
