@@ -165,4 +165,12 @@ public class MemberController implements MemberSession {
 		mv.setViewName("redirect:/index");
 		return mv;
 	}
+	
+	@RequestMapping("/memberDelete")
+	public String memberDelete(@RequestParam("id") String id) {
+		String userid=id;
+		System.out.println(userid);
+		ms.memberDelete(id);
+		return "index";
+	}
 }

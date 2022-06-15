@@ -77,6 +77,22 @@ public class MemberServiceImpl implements MemberService {
 		int result=mapper.logintest(member);
 		return result;
 	}
+
+	@Override
+	public String memberDelete(String id) {
+		String userid=id;
+		System.out.println(userid);
+		int result=mapper.memberDelete(id);
+		String msg;
+		if(result==1) {
+			msg="탈퇴를 진행하시겠습니까?";
+		} else {
+			msg="탈퇴 오류";
+		}
+		String message=null;
+		message="<script>alert('"+msg+"');</script>";
+		return message;
+	}
 	
 	
 	

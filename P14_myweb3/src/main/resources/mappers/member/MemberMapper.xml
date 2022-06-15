@@ -41,4 +41,8 @@
 		select count(*) from membership1 where id=#{id} and pw=#{pw}
 	</select>
 	
+	<delete id="memberDelete">
+		delete from membership1 where id=#{id}
+	</delete>
+	
 </mapper>
