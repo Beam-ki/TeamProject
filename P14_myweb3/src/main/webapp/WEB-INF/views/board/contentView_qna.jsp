@@ -43,20 +43,22 @@
 		<!-- section -->
         	<section class="qna-form">
             	<h2>문의 게시판</h2>
-     	       <div class="title-wrapper">
-        	        <p>제목</p><div class="title">마일리지 적립이 안됩니다.</div>
-         	   </div>            
-          	  <div class="content">마일리지 적립이 안돼요.</div>
-          	  <div class="btn-wrapper">
-          	      <a href="qna.html"><div class="btn btn-submit">&lt; back</div></a>
+     	     	  <div class="title-wrapper">
+        	 	       <p>제목</p><div class="title">마일리지 적립이 안됩니다.</div>
+         		   </div>            
+        	  	  <div class="content">마일리지 적립이 안돼요.</div>
+         	
+         	 	  <div class="btn-wrapper">
+         	 	      <a href="qna.html"><div class="btn btn-submit">&lt; back</div></a>
           	      
-          	      <c:if test="${data.product_img=='nan' }">
+          	        <c:if test="${data.product_img=='nan' }">
 						<b>이미지가 없습니다</b>
 					</c:if>
+				
 					<c:if test="${data.product_img!='nan' }">
 						<img src="${contextPath }/board/download?file=${data.product_img }" width="200px" height="200px">
 					</c:if>
-          	  </div>
+          	      </div>
           	  
           	  <textarea id="content" name="content" rows="10" cols="110" readonly placeholder="문의 내용을 입력하세요">${data.product_main }</textarea>
 			<br>
@@ -68,7 +70,7 @@
 			</c:if>
 			<input type="button" value="글목록" onclick="location.href='${contextPath}/board/boardAllList'">
       	  </section>
-
+	</div>
 	<!-- footer -->
     <footer>
         <div class="container">
