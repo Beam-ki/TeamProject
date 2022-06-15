@@ -26,7 +26,7 @@ public class BoardServiceImpl_qna implements BoardService_qna {
 //	public void boardAllList(Model model) {
 //		model.addAttribute("boardList", mapper.boardAllList());
 //	}
-	public void boardAllList(Model model, int num) {
+	public void boardAllList_qna(Model model, int num) {
 		int pageLetter=3; // 한 페이지당 글목록 수
 		int allCount=mapper.selectBoardCount(); // 전체 글 수
 		
@@ -43,7 +43,7 @@ public class BoardServiceImpl_qna implements BoardService_qna {
 
 	@Override
 	public String writeSave(MultipartHttpServletRequest mul, HttpServletRequest request) {
-		BoardDTO_qna dto=new BoardDTO_qna();
+		BoardDTO dto=new BoardDTO();
 		dto.setId(mul.getParameter("id"));
 		dto.setTitle(mul.getParameter("title"));
 		dto.setContent(mul.getParameter("content"));
@@ -83,7 +83,7 @@ public class BoardServiceImpl_qna implements BoardService_qna {
 
 	@Override
 	public String modify(MultipartHttpServletRequest mul, HttpServletRequest request) {
-		BoardDTO_qna dto=new BoardDTO_qna();
+		BoardDTO dto=new BoardDTO();
 		dto.setWriteNo(Integer.parseInt(mul.getParameter("writeNo")));
 		dto.setTitle(mul.getParameter("title"));
 		dto.setContent(mul.getParameter("content"));

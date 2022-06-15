@@ -17,4 +17,8 @@ public interface BoardService_qna {
 	public String modify(MultipartHttpServletRequest mul, HttpServletRequest request);
 	
 	public String boardDelete(int writeNo, String imageFileName, HttpServletRequest request);
+
+	public void boardAllList_qna(Model model, int num);
+
+	public void contentView_qna(int writeNo, Model model);
 }

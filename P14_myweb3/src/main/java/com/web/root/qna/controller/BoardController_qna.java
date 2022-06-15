@@ -23,22 +23,22 @@ import com.web.root.board.service.BoardService;
 import com.web.root.qna.service.BoardService_qna;
 
 @Controller
-@RequestMapping("board")
+@RequestMapping("qna")
 public class BoardController_qna {
 
 	@Autowired
 	BoardService_qna bs;
 	
-	@GetMapping("boardAllList")
-	public String boardAllList(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
+	@GetMapping("boardAllList_qna")
+	public String boardAllList_qna(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
 //		bs.boardAllList(model);
-		bs.boardAllList(model, num);
-		return "board/boardAllList";
+		bs.boardAllList_qna(model, num);
+		return "board/boardAllList_qna";
 	}
 	
 	@GetMapping("writeForm")
-	public String writeForm() {
-		return "board/writeForm";
+	public String writeForm_qna() {
+		return "board/writeForm_qna";
 	}
 	
 	@PostMapping("writeSave")
@@ -52,9 +52,9 @@ public class BoardController_qna {
 	}
 	
 	@GetMapping("contentView")
-	public String contentView(@RequestParam int writeNo, Model model) {
-		bs.contentView(writeNo, model);
-		return "board/contentView";
+	public String contentView_qna(@RequestParam int writeNo, Model model) {
+		bs.contentView_qna(writeNo, model);
+		return "board/contentView_qna";
 	}
 	
 	@GetMapping("download")
@@ -69,7 +69,7 @@ public class BoardController_qna {
 	
 	@GetMapping("modify_form")
 	public String modify_form(@RequestParam int writeNo, Model model) {
-		bs.contentView(writeNo, model);
+		bs.contentView_qna(writeNo, model);
 		return "board/modify_form";
 	}
 	
