@@ -10,14 +10,13 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.web.root.board.dto.BoardDTO;
 import com.web.root.mybatis.board.BoardMapper;
-import com.web.root.mybatis.board_qna.BoardMapper_qna;
-import com.web.root.qna.dto.BoardDTO_qna;
+
 
 @Service
 public class BoardServiceImpl_qna implements BoardService_qna {
 
 	@Autowired
-	BoardMapper_qna mapper;
+	BoardMapper mapper;
 	
 	@Autowired
 	BoardFileService_qna bfs;
@@ -127,6 +126,18 @@ public class BoardServiceImpl_qna implements BoardService_qna {
 			url="/board/contentView?writeNo="+writeNo;
 		}
 		return bfs.getMessage(request, msg, url);
+	}
+
+	@Override
+	public void boardAllList(Model model, int num) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void contentView_qna(int writeNo, Model model) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

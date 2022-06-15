@@ -16,9 +16,9 @@ public interface MemberService {
 	public String infoUpdate(MemberDTO member, HttpServletRequest request);
 	public int register(MemberDTO member);
 	public int logintest(MemberDTO member);
-<<<<<<< HEAD
+
 	public String Memberdelete(MemberDTO member, HttpServletRequest request);
-=======
+
 	public String memberDelete(String id, MemberDTO member, HttpServletRequest request, HttpSession session);
->>>>>>> 18d2d00f0efb7b420faab428ebe6e4e26b7c7407
+	public int adminLogintest(MemberDTO member);
 }

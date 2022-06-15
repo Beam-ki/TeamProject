@@ -128,4 +128,28 @@ public class BoardDTO {
 	public void setproduct_price(int product_price) {
 		this.product_price = product_price;
 	}
+	public void setImageFileName(String saveFile) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setId(String parameter) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setTitle(String parameter) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setContent(String parameter) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setWriteNo(int parseInt) {
+		// TODO Auto-generated method stub
+		
+	}
+	public String getWriteNo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

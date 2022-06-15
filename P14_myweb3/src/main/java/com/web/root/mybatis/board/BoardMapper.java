@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.web.root.board.dto.BoardDTO;
-import com.web.root.qna.dto.BoardDTO_qna;
 
 public interface BoardMapper {
 
@@ -25,5 +24,7 @@ public interface BoardMapper {
 	public int delete(int product_no);
 	
 	public int selectBoardCount();
+
+	public void upHit(int writeNo);
 
 }

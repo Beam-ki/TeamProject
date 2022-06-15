@@ -189,7 +189,6 @@ public class MemberController implements MemberSession {
 		return mv;
 	}
 	
-<<<<<<< HEAD
 	@RequestMapping("/memberdelete")
 	public void memberdelete(MemberDTO member,
 			   HttpServletRequest request,
@@ -202,7 +201,6 @@ public class MemberController implements MemberSession {
 		PrintWriter out=response.getWriter();
 		out.print(message);
 }
-=======
 	@RequestMapping("/memberDelete")
 	public void memberDelete(@RequestParam("id") String id,
 									 MemberDTO member,
@@ -214,5 +212,4 @@ public class MemberController implements MemberSession {
 		PrintWriter out=response.getWriter();
 		out.print(message);
 	}
->>>>>>> 18d2d00f0efb7b420faab428ebe6e4e26b7c7407
 }

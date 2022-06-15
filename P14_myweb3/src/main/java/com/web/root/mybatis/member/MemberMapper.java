@@ -15,5 +15,6 @@ public interface MemberMapper {
 	public int register(MemberDTO member);
 	public int logintest(MemberDTO member);
 	public int memberDelete(MemberDTO member);
+	public int memberDelete(String id);
 
 }
