@@ -49,10 +49,25 @@
           	  <div class="content">마일리지 적립이 안돼요.</div>
           	  <div class="btn-wrapper">
           	      <a href="qna.html"><div class="btn btn-submit">&lt; back</div></a>
+          	      
+          	      <c:if test="${data.product_img=='nan' }">
+						<b>이미지가 없습니다</b>
+					</c:if>
+					<c:if test="${data.product_img!='nan' }">
+						<img src="${contextPath }/board/download?file=${data.product_img }" width="200px" height="200px">
+					</c:if>
           	  </div>
+          	  
+          	  <textarea id="content" name="content" rows="10" cols="110" readonly placeholder="문의 내용을 입력하세요">${data.product_main }</textarea>
+			<br>
+			<c:if test="${data.product_writer==loginUser }">
+				<input type="button" 
+				       value="수정" onclick="location.href='${contextPath}/board/modifyForm?product_no=${data.product_no }'">
+				<input type="button" 
+			           value="삭제" onclick="location.href='${contextPath}/board/delete?product_no=${data.product_no }&product_img=${data.product_img }'">
+			</c:if>
+			<input type="button" value="글목록" onclick="location.href='${contextPath}/board/boardAllList'">
       	  </section>
-      	  
-      	  
 
 	<!-- footer -->
     <footer>
