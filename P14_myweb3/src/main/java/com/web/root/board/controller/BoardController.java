@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.web.root.board.service.BoardFileService;
@@ -89,8 +91,8 @@ public class BoardController {
 	
 	@PostMapping("modify")
 	public void modify(MultipartHttpServletRequest mul,
-			           HttpServletRequest request,
-			           HttpServletResponse response) throws Exception {
+					   HttpServletRequest request,
+					   HttpServletResponse response) throws Exception {
 		String message=bs.modify(mul, request);
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out=response.getWriter();
