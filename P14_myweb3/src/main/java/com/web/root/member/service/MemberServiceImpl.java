@@ -1,6 +1,7 @@
 package com.web.root.member.service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,7 +48,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String infoUpdate(MemberDTO member, HttpServletRequest request) {
 		int result=mapper.infoUpdate(member);
-		String msg,url;
+		String msg, url;
 		if(result==1) {
 			msg="내용이 변경되었습니다";
 			url="/member/mypage?id="+member.getId();
@@ -79,18 +80,21 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String memberDelete(String id) {
-		String userid=id;
-		System.out.println(userid);
+	public String memberDelete(String id, MemberDTO member, HttpServletRequest request, HttpSession session) {
 		int result=mapper.memberDelete(id);
-		String msg;
+		String msg, url;
 		if(result==1) {
 			msg="탈퇴를 진행하시겠습니까?";
+			url="/index";
+			session.invalidate();
 		} else {
 			msg="탈퇴 오류";
+			url="member/mypage?id="+member.getId();
 		}
 		String message=null;
-		message="<script>alert('"+msg+"');</script>";
+		String path=request.getContextPath();
+		message="<script>alert('"+msg+"');";
+		message+="location.href='"+path+url+"';</script>";
 		return message;
 	}
 	

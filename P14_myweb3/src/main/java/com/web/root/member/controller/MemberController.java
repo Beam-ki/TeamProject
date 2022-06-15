@@ -167,10 +167,14 @@ public class MemberController implements MemberSession {
 	}
 	
 	@RequestMapping("/memberDelete")
-	public String memberDelete(@RequestParam("id") String id) {
-		String userid=id;
-		System.out.println(userid);
-		ms.memberDelete(id);
-		return "index";
+	public void memberDelete(@RequestParam("id") String id,
+									 MemberDTO member,
+								     HttpServletRequest request,
+								     HttpServletResponse response,
+								     HttpSession session) throws Exception {
+		String message=ms.memberDelete(id, member, request, session);
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.print(message);
 	}
 }
