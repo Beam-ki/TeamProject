@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="P14_myweb2/src/main/java"/>
+	<classpathentry kind="src" path="P14_myweb3/src/main/java"/>
+	<classpathentry kind="output" path="P14_myweb2/target/classes"/>
+</classpath>
