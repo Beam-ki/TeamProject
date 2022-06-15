@@ -41,7 +41,7 @@
 		select count(*) from membership1 where id=#{id} and pw=#{pw}
 	</select>
 	
-	<delete id="memberDelete">
+	<delete id="memberdelete">
 		delete from membership1 where id=#{id}
 	</delete>
 	

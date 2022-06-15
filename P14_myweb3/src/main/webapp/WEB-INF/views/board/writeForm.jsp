@@ -56,8 +56,8 @@
                     <p>금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="product_price" placeholder="금액 입력해주세요" value="${product_price }" required></p>
                     
                      <h4>흥정 여부</h4>
-                    <label><input type="radio" name="product_status1" value="흥정 가능"> 흥정 가능</label>           
-                    <label><input type="radio" name="product_status1" value="흥정 불가능">흥정 불가능</label>           
+                    <label><input type="radio" name="product_status1" value="흥정 가능" > 흥정 가능</label>           
+                    <label><input type="radio" name="product_status1" value="흥정 불가능">흥정 불가능</label>
                     
                     <h4>상품 상태</h4>
                     <label><input type="radio" name="product_status" value="새 상품"> 새 상품</label>           

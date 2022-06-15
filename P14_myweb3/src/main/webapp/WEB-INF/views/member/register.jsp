@@ -25,7 +25,7 @@
                 <!--  <li class="left-nav clicked"><a href="/root/board/boardAllList">팝니다🙌</a></li>-->
                 <!--  <li class="left-nav"><a href="/root/board/qna">문의하기</a></li>-->
                 <li class="right-nav join"><a href="/root/member/register_form">회원가입</a></li>
-                <!--  <li class="right-nav"><a href="/root/member/login">로그인</a></li>-->
+                <li class="right-nav"><a href="/root/member/login">로그인</a></li>
                 
 <!--                 <li class="left-nav home"><a href="/root/index"><span>중고</span>마켓</a></li> -->
 <!--                 <li class="left-nav clicked"><a href="/root/board/boardAllList">팝니다🙌</a></li> -->

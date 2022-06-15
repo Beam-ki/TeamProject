@@ -1,4 +1,4 @@
-package com.web.root.mybatis.board;
+package com.web.root.mybatis.board_qna;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import com.web.root.board.dto.BoardDTO;
 import com.web.root.qna.dto.BoardDTO_qna;
 
-public interface BoardMapper {
+public interface BoardMapper_qna {
 
 //	public List<BoardDTO> boardAllList();
 	public List<BoardDTO> boardAllList(@Param("s") int start, @Param("e") int end);
@@ -25,5 +25,12 @@ public interface BoardMapper {
 	public int delete(int product_no);
 	
 	public int selectBoardCount();
+	
+	public int writeSave(BoardDTO_qna dto);
+
+	public void upHit(int writeNo);
+
+	public int modify(BoardDTO_qna dto);
+
 
 }

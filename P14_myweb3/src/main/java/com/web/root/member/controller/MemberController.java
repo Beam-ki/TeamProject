@@ -131,7 +131,7 @@ public class MemberController implements MemberSession {
 			PrintWriter out=res.getWriter();
 			out.println("<script>alert('회원가입이 완료되었습니다'); </script>");
 			out.flush();
-			mv.setViewName("/member/login");
+			mv.setViewName("/member/successRegister");
 			return mv;
 		}
 	}
@@ -166,11 +166,30 @@ public class MemberController implements MemberSession {
 		return mv;
 	}
 	
+<<<<<<< HEAD
+	@RequestMapping("/memberdelete")
+	public void memberdelete(MemberDTO member,
+			   HttpServletRequest request,
+			   HttpServletResponse response,
+			   HttpSession session) throws Exception {
+		String message=ms.Memberdelete(member, request);
+		session=request.getSession();
+		session.invalidate();
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.print(message);
+}
+=======
 	@RequestMapping("/memberDelete")
-	public String memberDelete(@RequestParam("id") String id) {
-		String userid=id;
-		System.out.println(userid);
-		ms.memberDelete(id);
-		return "index";
+	public void memberDelete(@RequestParam("id") String id,
+									 MemberDTO member,
+								     HttpServletRequest request,
+								     HttpServletResponse response,
+								     HttpSession session) throws Exception {
+		String message=ms.memberDelete(id, member, request, session);
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.print(message);
 	}
+>>>>>>> 18d2d00f0efb7b420faab428ebe6e4e26b7c7407
 }
