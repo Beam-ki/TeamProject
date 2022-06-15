@@ -49,15 +49,15 @@
                     <input type="hidden" name="product_type" value="A">
                 	<input type="hidden" name="product_writer" value="${loginUser }">
                     <p class="wr-title">제목<input type="text" name="product_title" value="${data.product_title }" required></p>
-                    <textarea name="product_main" id="wr-con" cols="130" rows="20" value="${data.product_main }" required></textarea>
+                    <textarea name="product_main" id="wr-con" cols="130" rows="20" required><c:out value="${data.product_main }"/></textarea>
                     <input type="file" class="file" name="product_img" onchange="readURL(this)">
                     <img id="preview" src="#" width="100px" height="100px">
                     <fieldset>
                     <p>금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="product_price" placeholder="금액 입력해주세요" value="${data.product_price }" required></p>
                     
-                     <h4>흥정 여부</h4>
-                    <label><input type="radio" name="product_status1" value="흥정 가능"> 흥정 가능</label>           
-                    <label><input type="radio" name="product_status1" value="흥정 불가능">흥정 불가능</label>           
+                    <h4>흥정 여부</h4>
+                    <label><input type="radio" name="product_status1" value="흥정 가능" > 흥정 가능</label>           
+                    <label><input type="radio" name="product_status1" value="흥정 불가능">흥정 불가능</label>
                     
                     <h4>상품 상태</h4>
                     <label><input type="radio" name="product_status" value="새 상품"> 새 상품</label>           
@@ -66,7 +66,7 @@
                     <h4>거래 방법</h4>
                     <label><input type="radio" name="product_trade" value="직거래"> 직거래</label>           
                     <label><input type="radio" name="product_trade" value="택배거래"> 택배거래</label>    
-                    <label><input type="radio" name="product_trade" value="기프티콘"> 기프티콘</label>   
+                    <label><input type="radio" name="product_trade" value="기프티콘"> 기프티콘</label>  
                     
                 </fieldset>
                     

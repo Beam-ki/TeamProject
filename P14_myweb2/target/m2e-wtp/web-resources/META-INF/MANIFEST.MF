@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: PowerUser
-=======
-Built-By: ehdwn
->>>>>>> 18d2d00f0efb7b420faab428ebe6e4e26b7c7407
 Build-Jdk: 1.8.0_321
 Created-By: Maven Integration for Eclipse
 

@@ -31,8 +31,8 @@
             <p>회원가입이 완료되었습니다!</p>
             <p>중고마켓에서 즐거운 거래되세요!</p>
             <div class="btn-wrapper">
-               <a href="/root/index"><div>홈으로</div></a>
-               <a href="/root/member/login"><div>로그인</div></a>
+                <div><a href="/root/index">홈으로</a></div>
+                <div><a href="/root/member/login">로그인</a></div>
             </div>
             
         </section>

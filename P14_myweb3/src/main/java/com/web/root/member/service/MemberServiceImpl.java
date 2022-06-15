@@ -78,14 +78,19 @@ public class MemberServiceImpl implements MemberService {
 		int result=mapper.logintest(member);
 		return result;
 	}
-	
-	@Override
-	public int adminLogintest(MemberDTO member) {
-		int result=mapper.adminLogintest(member);
-		return result;
-	}
 
 	@Override
+<<<<<<< HEAD
+	public String Memberdelete(MemberDTO member, HttpServletRequest request) {
+		int result=mapper.memberDelete(member);
+		String msg,url;
+		if(result==1) {
+			msg="내용이 변경되었습니다";
+			url="/member/mypage?id="+member.getId();
+		} else {
+			msg="수정 오류";
+			url="/member/memberinfo?id="+member.getId();
+=======
 	public String memberDelete(String id, MemberDTO member, HttpServletRequest request, HttpSession session) {
 		int result=mapper.memberDelete(id);
 		String msg, url;
@@ -96,6 +101,7 @@ public class MemberServiceImpl implements MemberService {
 		} else {
 			msg="탈퇴 오류";
 			url="member/mypage?id="+member.getId();
+>>>>>>> 18d2d00f0efb7b420faab428ebe6e4e26b7c7407
 		}
 		String message=null;
 		String path=request.getContextPath();
@@ -103,6 +109,9 @@ public class MemberServiceImpl implements MemberService {
 		message+="location.href='"+path+url+"';</script>";
 		return message;
 	}
+
+	
+	
 	
 	
 	

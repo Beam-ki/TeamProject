@@ -59,9 +59,8 @@
 	
 	<update id="modify">
 		update board_product set product_title=#{product_title},
-						         product_main=#{product_main},
-						         product_img=#{product_img},
-						         product_type=#{product_type},
+						         product_main=#{product_main},						         
+						         product_img=#{product_img},						         
 						         product_price=#{product_price},
 						         product_trade=#{product_trade},
 						         product_status=#{product_status},

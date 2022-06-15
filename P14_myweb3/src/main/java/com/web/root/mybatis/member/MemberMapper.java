@@ -2,6 +2,8 @@ package com.web.root.mybatis.member;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.web.root.member.dto.MemberDTO;
 
 public interface MemberMapper {
@@ -12,6 +14,6 @@ public interface MemberMapper {
 	public int infoUpdate(MemberDTO member);
 	public int register(MemberDTO member);
 	public int logintest(MemberDTO member);
-	public int adminLogintest(MemberDTO member);
-	public int memberDelete(String id);
+	public int memberDelete(MemberDTO member);
+
 }

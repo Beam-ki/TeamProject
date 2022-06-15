@@ -103,10 +103,12 @@ public class BoardServiceImpl implements BoardService {
 		BoardDTO dto=new BoardDTO();
 		dto.setProduct_no(Integer.parseInt(mul.getParameter("product_no")));
 		dto.setProduct_title(mul.getParameter("product_title"));
+		dto.setProduct_title(mul.getParameter("product_no"));
 		dto.setProduct_main(mul.getParameter("product_main"));
 		dto.setproduct_type(mul.getParameter("product_type"));
-		dto.setproduct_price(Integer.parseInt (mul.getParameter("product_price")));
+		dto.setproduct_price(Integer.parseInt(mul.getParameter("product_price")));
 		dto.setProduct_trade(mul.getParameter("product_trade"));
+		dto.setProduct_trade(mul.getParameter("product_price"));
 		dto.setProduct_status(mul.getParameter("product_status"));
 		dto.setproduct_status1(mul.getParameter("product_status1"));
 		
@@ -119,6 +121,13 @@ public class BoardServiceImpl implements BoardService {
 		}
 		int result=mapper.modify(dto);
 		
+		
+		try {
+			result=mapper.modify(dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		String msg,url;
 		if(result==1) {
 			msg="내용이 변경되었습니다";
@@ -128,6 +137,7 @@ public class BoardServiceImpl implements BoardService {
 			url="/board/modifyForm?product_no="+dto.getProduct_no();
 		}
 		return bfs.getMessage(request, msg, url);
+		
 	}
 
 	@Override
@@ -165,7 +175,7 @@ public class BoardServiceImpl implements BoardService {
 		int start=end+1-pageLetter;
 		
 		model.addAttribute("repeat", repeat);
-		model.addAttribute("boardList", mapper.qna(start, end));
+		model.addAttribute("qna", mapper.qna(start, end));
 	}
 	
 	

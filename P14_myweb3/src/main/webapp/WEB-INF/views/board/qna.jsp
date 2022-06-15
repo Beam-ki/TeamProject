@@ -56,7 +56,7 @@
 					</td>
 				</tr>
             </table>
-			<a href="/root/board/writeForm" class="btn btn-submit">글쓰기</a>
+			<a href="/root/board/qnawriteForm" class="btn btn-submit">글쓰기</a>
         </section>
     </div>
     <!-- footer -->
