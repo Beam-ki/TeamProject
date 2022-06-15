@@ -157,6 +157,29 @@ public class MemberController implements MemberSession {
 			return mv;
 		}
 	}
+	
+	@RequestMapping("/adminLogintest")
+	public ModelAndView adlogintest(MemberDTO member, HttpServletResponse res, HttpServletRequest request, HttpSession session) throws IOException {
+		ModelAndView mv=new ModelAndView();
+		session=request.getSession();
+		int result=ms.adminLogintest(member);
+		if(result != 1) {
+			res.setContentType("text/html; charset=euc-kr");
+			PrintWriter out=res.getWriter();
+			out.println("<script>alert('아이디 또는 비밀번호를 확인해주세요'); </script>");
+			out.flush();
+			mv.setViewName("/member/login");
+			return mv;
+		}else {
+//			session.setAttribute("id", member.getId());
+			session.setAttribute(ADMIN_LOGIN, member.getId());
+			mv.addObject("session",session);
+			mv.addObject("result", result);
+			mv.setViewName("redirect:/index");
+			return mv;
+		}
+	}
+	
 	@RequestMapping("/logouttest")
 	public ModelAndView logouttest(HttpServletRequest request, HttpSession session) {
 		ModelAndView mv=new ModelAndView();
