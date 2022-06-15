@@ -29,11 +29,7 @@
                     <ul class="mypage-rnb">
                         <li><a href="info?id=${member.id }">내 정보 수정</a></li>
                         <li><a href="mypage-product.html">내가 쓴 글</a></li>
-<<<<<<< HEAD
-                        <li><a href="memberdelete?id=${member.id }">회원 탈퇴</a>
-=======
                         <li><a href="memberDelete?id=${member.id }">회원 탈퇴</a></li>
->>>>>>> 18d2d00f0efb7b420faab428ebe6e4e26b7c7407
                     </ul>
                 </div>
             </div>
