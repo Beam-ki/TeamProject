@@ -36,6 +36,11 @@ public class MemberController implements MemberSession {
 	public String login() {
 		return "member/login"; 
 	}
+//	@GetMapping("mypageList")
+//	public String mypageList(Model model, @RequestParam("id") String userid) {
+//		ms.mypageList(model, userid);
+//		return "member/mypageList";
+//	}
 	
 	@RequestMapping("successLogin")
 	public String successLogin(@RequestParam("id") String id, HttpSession session) {

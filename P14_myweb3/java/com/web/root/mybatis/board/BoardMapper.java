@@ -14,6 +14,8 @@ public interface BoardMapper {
 	
 	public List<BoardDTO> qna(@Param("s") int start, @Param("e") int end);
 	
+	public List<BoardDTO> mypageList(@Param("s") int start, @Param("e") int end, String id);
+	
 	public int writeSave(BoardDTO dto);
 	
 	public int qnawriteSave(BoardDTO dto);
@@ -36,6 +38,7 @@ public interface BoardMapper {
 	
 	
 	
+
 
 
 

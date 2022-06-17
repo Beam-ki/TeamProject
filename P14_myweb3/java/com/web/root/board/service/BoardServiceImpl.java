@@ -42,6 +42,22 @@ public class BoardServiceImpl implements BoardService {
       model.addAttribute("repeat", repeat);
       model.addAttribute("boardList", mapper.boardAllList(start, end));
    }
+   
+   @Override
+   public void mypageList(Model model, int num,String id) {
+	      int pageLetter=8; // 한 페이지당 글목록 수
+	      int allCount=mapper.selectBoardCount(); // 전체 글 수
+	      
+	      int repeat=allCount/pageLetter; // 마지막 페이지 번호
+	      if(allCount%pageLetter!=0) {
+	         repeat+=1;
+	      }
+	      int end=num*pageLetter;
+	      int start=end+1-pageLetter;
+	      
+	      model.addAttribute("repeat", repeat);
+	      model.addAttribute("mypageList", mapper.mypageList(start, end,id));
+	   }
 
    @Override
    public String writeSave(MultipartHttpServletRequest mul, HttpServletRequest request) {

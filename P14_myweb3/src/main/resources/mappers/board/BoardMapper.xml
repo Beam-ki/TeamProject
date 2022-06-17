@@ -39,10 +39,15 @@
 		(select rownum rn, A.* from
 		(select * from board_product order by product_no desc)A )B
 		where rn between #{s} and #{e}
-		and B.product_type='B'
-		
+		and B.product_type='B'	
 	</select>
-	  
+	
+	<select id="mypageList" resultMap="board">
+		Select product_no,product_title,product_writer,product_day from board_product a,
+              			membership1 b
+             			where a.product_writer =b.Id
+	</select>
+    
 	<insert id="writeSave">
     	insert into board_product(product_no, product_writer, product_title, product_main, product_img ,product_type,product_price,product_trade,product_status,product_status1)
     	values(mvc_board_seq.nextval, #{product_writer}, #{product_title}, #{product_main}, #{product_img},#{product_type},#{product_price},#{product_trade},#{product_status},#{product_status1})
