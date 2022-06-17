@@ -57,13 +57,24 @@
             <br>
 			<textarea id="content" name="content" rows="10" cols="110" readonly placeholder="상품 내용을 입력하세요">${data.product_main }</textarea>
 			<br>
-			
-			<c:if test="${data.product_writer==(loginUser || loginAdmin)}">
-				<input type="button" 
-				       value="수정" onclick="location.href='${contextPath}/board/modifyForm?product_no=${data.product_no }'">
-				<input type="button" 
-			           value="삭제" onclick="location.href='${contextPath}/board/delete?product_no=${data.product_no }&product_img=${data.product_img }'">
-			</c:if>
+			<c:choose>
+				<c:when test="${not empty loginAdmin }">
+					<input type="button" 
+					       value="수정" onclick="location.href='${contextPath}/board/modifyForm?product_no=${data.product_no }'">
+					<input type="button" 
+				           value="삭제" onclick="location.href='${contextPath}/board/delete?product_no=${data.product_no }&product_img=${data.product_img }'">
+				</c:when>
+			</c:choose>
+			<c:choose>
+				<c:when test="${empty loginAdmin }">
+					<c:if test="${data.product_writer==loginUser}">
+						<input type="button" 
+						       value="수정" onclick="location.href='${contextPath}/board/modifyForm?product_no=${data.product_no }'">
+						<input type="button" 
+					           value="삭제" onclick="location.href='${contextPath}/board/delete?product_no=${data.product_no }&product_img=${data.product_img }'">
+					</c:if>
+				</c:when>
+			</c:choose>
 			<input type="button" value="글목록" onclick="location.href='${contextPath}/board/boardAllList'">
         </section>
     </div>

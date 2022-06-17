@@ -48,14 +48,23 @@
     	values(mvc_board_seq.nextval, #{product_writer}, #{product_title}, #{product_main}, #{product_img},#{product_type},#{product_price},#{product_trade},#{product_status},#{product_status1})
 	</insert>
 	
+	<insert id="qnawriteSave">
+    	insert into board_product(product_no, product_writer, product_title, product_main, product_img ,product_type)
+    	values(mvc_board_seq.nextval, #{product_writer}, #{product_title}, #{product_main}, #{product_img},#{product_type})
+	</insert>
+	
 	<select id="contentView" resultMap="board">
 		select * from board_product where product_no=#{product_no}
 	</select>
 	
-<!-- 	<update id="upHit"> -->
-<!-- 		update board_product set product_view=product_view+1 -->
-<!-- 		where product_no=#{product_no} -->
-<!-- 	</update> -->
+	<select id="qnacontentView" resultMap="board">
+		select * from board_product where product_no=#{product_no}
+	</select>
+	
+	<update id="upHit"> 
+ 		update board_product set product_view=product_view+1 -->
+		where product_no=#{product_no} -->
+	</update> 
 	
 	<update id="modify">
 		update board_product set product_title=#{product_title},
@@ -67,7 +76,17 @@
 						         product_status1=#{product_status1} where product_no=#{product_no}
 	</update>
 	
+	<update id="qnamodify">
+		update board_product set product_title=#{product_title},
+						         product_main=#{product_main},						         
+						         product_img=#{product_img}	where product_no=#{product_no}
+	</update>
+	
 	<delete id="delete">
+		delete from board_product where product_no=#{product_no}
+	</delete>
+	
+	<delete id="qnadelete">
 		delete from board_product where product_no=#{product_no}
 	</delete>
 	

@@ -138,7 +138,7 @@ public class MemberController implements MemberSession {
 			mv.setViewName("/member/login");
 			return mv;
 		}else {
-			if(request.getParameter("id")=="admin") {
+			if(request.getParameter("id").equals("admin")) {
 				session.setAttribute(ADMIN_LOGIN, member.getId());
 				mv.addObject("session",session);
 				mv.addObject("result", result);

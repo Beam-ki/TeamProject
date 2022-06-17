@@ -29,14 +29,14 @@
                 <div class="btn ico-notice">공지</div>
                 <a href="#">문의게시판 공지사항</a>
             </div>
-            	<table border="10">
-		<tr align = "center" bgcolor="#F2F2F2">
-			<td>No.</td>
-			<td width="50%">제목</td>
-			<td>작성자</td>
-			<td>등록일</td>		
-		</tr>
-		<c:forEach var="dto" items="${qna }">
+        <table border="1">
+			<tr align = "center" bgcolor="#F2F2F2">
+				<td>No.</td>
+				<td width="50%">제목</td>
+				<td>작성자</td>
+				<td>등록일</td>		
+			</tr>
+			<c:forEach var="dto" items="${qna }">
 			<tr>				
 				<td>${dto.product_no }</td>
 				<td><a href="${contextPath }/board/qnacontentView?product_no=${dto.product_no}">${dto.product_title }</a></td>
@@ -46,12 +46,14 @@
 				<fmt:formatDate value="${product_day}" pattern="yyyy-MM-dd"/></td>
 			
 			</tr>
-		</c:forEach>
-		<td colspan="4" align="center">
+			</c:forEach>
+			<tr>
+				<td colspan="4" align="center">
 					<c:forEach var="num" begin="1" end="${repeat }">
 						<a href="qna?num=${num }">[ ${num } ]</a>
 					</c:forEach>
 				</td>
+			</tr>	
 		</table>
                                                                                           
              <a href="/root/board/qnawriteForm" class="btn btn-submit">글쓰기</a>
