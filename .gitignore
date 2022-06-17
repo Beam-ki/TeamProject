@@ -130,3 +130,8 @@ P14_myweb3/target/m2e-wtp/web-resources/META-INF/maven/com.web/root/pom.properti
 *.properties
 P14_myweb3/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 *.MF
+*.properties
+*.MF
+*.class
+P14_myweb3/target/classes/com/web/root/member/service/MemberServiceImpl.class
+*.class

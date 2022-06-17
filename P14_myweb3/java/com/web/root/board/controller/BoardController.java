@@ -40,6 +40,19 @@ public class BoardController {
 		bs.qna(model, num);
 		return "board/qna";
 	}
+	@GetMapping("mypageList")
+	public String mypageList(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num, @RequestParam("id")String id) {
+		bs.mypageList(model, num,id);
+		return "board/mypageList";
+	}
+	@GetMapping("Notice")
+	public String Notice() {
+		return "board/Notice";
+	}
+	@GetMapping("qnaNotice")
+	public String qnaNotice() {
+		return "board/qnaNotice";
+	}
 	
 	
 	@GetMapping("writeForm")

@@ -27,7 +27,7 @@
             <h2>문의게시판 🙌</h2>
             <div class="notice">
                 <div class="btn ico-notice">공지</div>
-                <a href="#">문의게시판 공지사항</a>
+                <a href="qnaNotice">문의게시판 공지사항</a>
             </div>
         <table border="1">
 			<tr align = "center" bgcolor="#F2F2F2">

@@ -26,7 +26,7 @@
             <h2>팝니다🙌</h2>
             <div class="notice">
                 <div class="btn ico-notice">공지</div>
-                <a href="#">팝니다🙌 게시판 이용 방법</a>
+                <a href="Notice">팝니다🙌 게시판 이용 방법</a>
             </div>    
             <c:if test="${boardList.size()==0 }">
 				<tr>

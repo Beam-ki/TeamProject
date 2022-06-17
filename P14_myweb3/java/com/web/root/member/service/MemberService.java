@@ -17,4 +17,5 @@ public interface MemberService {
 	public int register(MemberDTO member);
 	public int logintest(MemberDTO member);
 	public String memberDelete(String id, MemberDTO member, HttpServletRequest request, HttpSession session);
+	//public void mypageList(Model model, String userid);
 }

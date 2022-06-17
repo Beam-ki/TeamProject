@@ -25,8 +25,12 @@
 			   	<c:when test="${not empty loginUser || not empty loginAdmin}"><li class="right-nav"><a href="/root/member/logouttest">로그아웃</a></li></c:when>
 			</c:choose>
 			<c:choose>
-   				<c:when test="${not empty loginUser || not empty loginAdmin}">
-   					<li class="right-nav clicked"><a href="/root/member/mypage?id=(${loginUser }||${loginAdmin})">마이페이지</a></li>
+   				<c:when test="${not empty loginUser}">
+   					<li class="right-nav clicked"><a href="/root/member/mypage?id=${loginUser }">마이페이지</a></li>
+   					<li class="right-nav profile-ico"><a href="/root/member/mypage?id=(${loginUser }||${loginAdmin})"><img src="../img/ico-profile.png" alt=""></a></li>
+   					</c:when>
+   				<c:when test="${not empty loginAdmin}">
+   					<li class="right-nav clicked"><a href="/root/member/mypage?id=${loginAdmin}">마이페이지</a></li>
    					<li class="right-nav profile-ico"><a href="/root/member/mypage?id=(${loginUser }||${loginAdmin})"><img src="../img/ico-profile.png" alt=""></a></li>
    				</c:when>
 	        </c:choose>

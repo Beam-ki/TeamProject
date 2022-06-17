@@ -28,6 +28,8 @@ public interface BoardService {
 	
 	public String qnaboardDelete(int product_no, String product_img, HttpServletRequest request);
 
+	public void mypageList(Model model, int num, String id);
+
 
 
 

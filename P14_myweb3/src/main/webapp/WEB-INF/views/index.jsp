@@ -18,24 +18,28 @@
 	        <ul class="gnb-lnb">
 	            <li class="left-nav home"><a href="/root/index"><span>중고</span>마켓</a></li>
 	            <c:choose>
-	   				<c:when test="${not empty loginUser || not empty loginAdmin}"><li class="left-nav"><a href="/root/board/qna">문의 하기</a></li></c:when>
-	            </c:choose>
-	            <c:choose>
-	          		<c:when test="${empty loginUser && empty loginAdmin}"><li class="right-nav"><a href="/root/member/register_form">회원가입</a></li></c:when>
-	            </c:choose>
-	            <c:choose>
-	   				<c:when test="${not empty loginUser || not empty loginAdmin}"><li class="left-nav"><a href="/root/board/boardAllList">팝니다🙌</a></li></c:when>
-	            </c:choose>
-	            <c:choose>
-				   	<c:when test="${empty loginUser && empty loginAdmin}"><li class="right-nav"><a href="/root/member/login">로그인</a></li></c:when>
-				   	<c:when test="${not empty loginUser || not empty loginAdmin}"><li class="right-nav"><a href="/root/member/logouttest">로그아웃</a></li></c:when>
-				</c:choose>
-				<c:choose>
-	   				<c:when test="${not empty loginUser || not empty loginAdmin}">
-	   					<li class="right-nav clicked"><a href="/root/member/mypage?id=(${loginUser }||${loginAdmin})">마이페이지</a></li>
-	   					<li class="right-nav profile-ico"><a href="/root/member/mypage?id=(${loginUser }||${loginAdmin})"><img src="img/ico-profile.png" alt=""></a></li>
-	   				</c:when>
-	            </c:choose>
+   				<c:when test="${not empty loginUser || not empty loginAdmin}"><li class="left-nav"><a href="/root/board/qna">문의 하기</a></li></c:when>
+            </c:choose>
+            <c:choose>
+          		<c:when test="${empty loginUser && empty loginAdmin}"><li class="right-nav"><a href="/root/member/register_form">회원가입</a></li></c:when>
+            </c:choose>
+            <c:choose>
+   				<c:when test="${not empty loginUser || not empty loginAdmin}"><li class="left-nav"><a href="/root/board/boardAllList">팝니다🙌</a></li></c:when>
+            </c:choose>
+            <c:choose>
+			   	<c:when test="${empty loginUser && empty loginAdmin}"><li class="right-nav"><a href="/root/member/login">로그인</a></li></c:when>
+			   	<c:when test="${not empty loginUser || not empty loginAdmin}"><li class="right-nav"><a href="/root/member/logouttest">로그아웃</a></li></c:when>
+			</c:choose>
+			<c:choose>
+   				<c:when test="${not empty loginUser}">
+   					<li class="right-nav clicked"><a href="/root/member/mypage?id=${loginUser }">마이페이지</a></li>
+   					<li class="right-nav profile-ico"><a href="/root/member/mypage?id=(${loginUser }||${loginAdmin})"><img src="img/ico-profile.png" alt=""></a></li>
+   					</c:when>
+   				<c:when test="${not empty loginAdmin}">
+   					<li class="right-nav clicked"><a href="/root/member/mypage?id=${loginAdmin}">마이페이지</a></li>
+   					<li class="right-nav profile-ico"><a href="/root/member/mypage?id=(${loginUser }||${loginAdmin})"><img src="img/ico-profile.png" alt=""></a></li>
+   				</c:when>
+	        </c:choose>
 	        </ul>
     	</nav>
         <!-- header -->
@@ -59,14 +63,14 @@
         <article>
             <div class="container">
                 <h2>지금 중고마켓과 함께 하세요!</h2>
-               	<c:if test="${empty loginUser && empty loginAdmin}">
-                	<div class="btn"><a href="/root/member/register_form">가입하기</a></div>
+                  <c:if test="${empty loginUser && empty loginAdmin}">
+                   <div class="btn"><a href="/root/member/register_form">가입하기</a></div>
                 </c:if>
                 <c:if test="${not empty loginUser }">
-                	<h2>${loginUser }님 환영합니다</h2>
+                   <h2>${loginUser }님 환영합니다</h2>
                 </c:if>
                 <c:if test="${not empty loginAdmin }">
-                	<h2>${loginAdmin }님 환영합니다</h2>
+                   <h2>${loginAdmin }님 환영합니다</h2>
                 </c:if>
             </div>
         </article>
