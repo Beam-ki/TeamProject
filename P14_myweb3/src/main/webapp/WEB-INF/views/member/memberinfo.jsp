@@ -27,8 +27,9 @@
             <div class="mypage">
                 <div class="mypage-nav">
                     <ul class="mypage-rnb">
-                        <li class="clicked"><a href="mypage.html">내 정보 수정</a></li>
+                        <li><a href="info?id=${info.id }">내 정보 수정</a></li>
                         <li><a href="mypage-product.html">내가 쓴 글</a></li>
+                        <li><a href="memberDelete?id=${info.id }">회원 탈퇴</a></li>
                     </ul>
                 </div>
                 <div class="mypage-con">

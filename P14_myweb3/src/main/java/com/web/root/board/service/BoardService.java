@@ -1,9 +1,13 @@
 package com.web.root.board.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import com.web.root.board.dto.QnaReplyDTO;
 
 public interface BoardService {
 
@@ -28,9 +32,7 @@ public interface BoardService {
 	
 	public String qnaboardDelete(int product_no, String product_img, HttpServletRequest request);
 
-
-
-
+///////////////////////////////////////////////////////////
 	
-//	public void qna(Model model, int num);
+	public List<QnaReplyDTO> readReply(int bno);
 }

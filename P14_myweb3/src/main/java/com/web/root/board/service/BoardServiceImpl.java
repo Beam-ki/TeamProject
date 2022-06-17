@@ -1,5 +1,7 @@
 package com.web.root.board.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.web.root.board.dto.BoardDTO;
+import com.web.root.board.dto.QnaReplyDTO;
 import com.web.root.mybatis.board.BoardMapper;
+import com.web.root.mybatis.board.ReplyMapper;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -273,7 +277,15 @@ public class BoardServiceImpl implements BoardService {
       model.addAttribute("qna", mapper.qna(start, end));
    }
 
-
+/////////////////////////////////////////////////////////////////////
+   
+   @Autowired
+   ReplyMapper remapper;
+   
+   @Override
+   public List<QnaReplyDTO> readReply(int bno) {
+	   return remapper.readReply(bno);
+   }
       
    
 

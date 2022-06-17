@@ -27,7 +27,7 @@
             <h2>문의게시판 🙌</h2>
             <div class="notice">
                 <div class="btn ico-notice">공지</div>
-                <a href="#">문의게시판 공지사항</a>
+                <a href="qnaNotice">문의게시판 공지사항</a>
             </div>
         <table border="1">
 			<tr align = "center" bgcolor="#F2F2F2">
@@ -42,9 +42,9 @@
 				<td><a href="${contextPath }/board/qnacontentView?product_no=${dto.product_no}">${dto.product_title }</a></td>
 				<td>${dto.product_writer }</td>				
 				<td>
-				<fmt:parseDate value="${dto.product_day}" var="product_day" pattern="yyyy-MM-dd HH:mm:ss" />	
-				<fmt:formatDate value="${product_day}" pattern="yyyy-MM-dd"/></td>
-			
+					<fmt:parseDate value="${dto.product_day}" var="product_day" pattern="yyyy-MM-dd HH:mm:ss" />	
+					<fmt:formatDate value="${product_day}" pattern="yyyy-MM-dd"/>
+				</td>
 			</tr>
 			</c:forEach>
 			<tr>

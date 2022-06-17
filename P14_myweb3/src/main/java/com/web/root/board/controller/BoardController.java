@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.web.root.board.dto.BoardDTO;
+import com.web.root.board.dto.QnaReplyDTO;
 import com.web.root.board.service.BoardFileService;
 import com.web.root.board.service.BoardService;
 
@@ -40,7 +41,14 @@ public class BoardController {
 		bs.qna(model, num);
 		return "board/qna";
 	}
-	
+	@GetMapping("Notice")
+	   public String Notice() {
+	      return "board/Notice";
+	   }
+    @GetMapping("qnaNotice")
+    public String qnaNotice() {
+       return "board/qnaNotice";
+    }
 	
 	@GetMapping("writeForm")
 	public String writeForm() {
@@ -79,8 +87,11 @@ public class BoardController {
 		return "board/contentView";
 	}
 	@GetMapping("qnacontentView")
-	public String qnacontentView(@RequestParam int product_no, Model model) {
+	public String qnacontentView(BoardDTO dto, @RequestParam int product_no, Model model) {
 		bs.qnacontentView(product_no, model);
+		
+		List<QnaReplyDTO> replyList=bs.readReply(dto.getProduct_no());
+		model.addAttribute("replyList", replyList);
 		return "board/qnacontentView";
 	}
 	
@@ -148,6 +159,8 @@ public class BoardController {
 		out.print(message);
 		
 	}
+	
+
 
 	
 	

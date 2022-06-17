@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>   
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <c:set var="contextPath" value="${pageContext.request.contextPath }"/>    
 <!DOCTYPE html>
 <html lang="ko">
@@ -34,13 +35,41 @@
             <div class="btn-wrapper">
             </div>
 			<br>
-			<c:if test="${data.product_writer==loginUser }">
-				<input type="button" 
-				       value="수정" onclick="location.href='${contextPath}/board/qnamodifyform?product_no=${data.product_no }'">
-				<input type="button" 
-			           value="삭제" onclick="location.href='${contextPath}/board/qnadelete?product_no=${data.product_no }&product_img=${data.product_img }'">
-			</c:if>
+			<c:choose>
+				<c:when test="${not empty loginAdmin }">
+					<input type="button" 
+					       value="수정" onclick="location.href='${contextPath}/board/qnamodifyform?product_no=${data.product_no }'">
+					<input type="button" 
+				           value="삭제" onclick="location.href='${contextPath}/board/delete?product_no=${data.product_no }&product_img=${data.product_img }'">
+				</c:when>
+			</c:choose>
+			<c:choose>
+				<c:when test="${empty loginAdmin }">
+					<c:if test="${data.product_writer==loginUser}">
+						<input type="button" 
+						       value="수정" onclick="location.href='${contextPath}/board/qnamodifyform?product_no=${data.product_no }'">
+						<input type="button" 
+					           value="삭제" onclick="location.href='${contextPath}/board/delete?product_no=${data.product_no }&product_img=${data.product_img }'">
+					</c:if>
+				</c:when>
+			</c:choose>
 			<input type="button" value="글목록" onclick="location.href='${contextPath}/board/qna'">
+			<br>
+			<!-- 댓글 -->
+			<div id="reply">
+			  <ol class="replyList">
+			    <c:forEach items="${replyList}" var="replyList">
+			      <li>
+			        <p>
+			        작성자 : ${replyList.writer}<br>
+			        <fmt:parseDate value="${replyList.regdate}" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
+			        작성 날짜 : <fmt:formatDate value="${regdate}" pattern="yyyy-MM-dd" />
+			        </p>
+			        <p>${replyList.content}</p>
+			      </li>
+			    </c:forEach>   
+			  </ol>
+			</div>
         </section>
     </div>
 	<!-- footer -->
