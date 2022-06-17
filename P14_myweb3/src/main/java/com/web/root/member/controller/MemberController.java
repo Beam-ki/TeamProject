@@ -36,17 +36,6 @@ public class MemberController implements MemberSession {
 	public String login() {
 		return "member/login"; 
 	}
-//	@PostMapping("user_check")
-//	public String userCheck(MemberDTO member) { 
-//		int result=ms.user_check(member.getId());
-//		System.out.println("도냐?");
-//		
-//		if(result==0) {
-//			rs.addAttribute("id", request.getParameter("id"));
-//			return "redirect:successLogin";
-//		}
-//		return "redirect:login";
-//	}
 	
 	@RequestMapping("successLogin")
 	public String successLogin(@RequestParam("id") String id, HttpSession session) {
@@ -149,12 +138,19 @@ public class MemberController implements MemberSession {
 			mv.setViewName("/member/login");
 			return mv;
 		}else {
-//			session.setAttribute("id", member.getId());
-			session.setAttribute(LOGIN, member.getId());
-			mv.addObject("session",session);
-			mv.addObject("result", result);
-			mv.setViewName("redirect:/index");
-			return mv;
+			if(request.getParameter("id")=="admin") {
+				session.setAttribute(ADMIN_LOGIN, member.getId());
+				mv.addObject("session",session);
+				mv.addObject("result", result);
+				mv.setViewName("redirect:/index");
+				return mv;
+			} else {
+				session.setAttribute(LOGIN, member.getId());
+				mv.addObject("session",session);
+				mv.addObject("result", result);
+				mv.setViewName("redirect:/index");
+				return mv;
+			}		
 		}
 	}
 	

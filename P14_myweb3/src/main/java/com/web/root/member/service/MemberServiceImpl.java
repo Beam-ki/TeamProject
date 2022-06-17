@@ -16,17 +16,6 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberMapper mapper;
 
-//	@Override
-//	public int user_check(HttpServletRequest request) {
-//		MemberDTO dto=mapper.user_check(request.getParameter("id"));
-//		if(dto!=null) {
-//			if(request.getParameter("pw").equals(dto.getPw())){
-//				return 0;
-//			}
-//		}
-//		return 1;
-//	}
-	
 	@Override
 	public int user_check(String id){
 		String usercheck = mapper.user_check(id);

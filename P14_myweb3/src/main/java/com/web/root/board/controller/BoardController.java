@@ -62,16 +62,26 @@ public class BoardController {
 	    out.print(message);
 	    
 	}
+	@PostMapping("qnawriteSave")
+	public void qnawriteSave(MultipartHttpServletRequest mul, 
+                          HttpServletResponse response, 
+                          HttpServletRequest request) throws IOException{
+	    String message = bs.qnawriteSave(mul, request);
+	    response.setContentType("text/html; charset=utf-8");
+	    PrintWriter out = response.getWriter();
+	    out.print(message);
+	    
+	}
 	
 	@GetMapping("contentView")
 	public String contentView(@RequestParam int product_no, Model model) {
 		bs.contentView(product_no, model);
 		return "board/contentView";
 	}
-	@GetMapping("qnaView")
-	public String qnaView(@RequestParam int product_no, Model model) {
-		bs.contentView(product_no, model);
-		return "board/qnaView";
+	@GetMapping("qnacontentView")
+	public String qnacontentView(@RequestParam int product_no, Model model) {
+		bs.qnacontentView(product_no, model);
+		return "board/qnacontentView";
 	}
 	
 	@GetMapping("download")
@@ -88,12 +98,28 @@ public class BoardController {
 		bs.contentView(product_no, model);
 		return "board/modifyForm";
 	}
+	@GetMapping("qnamodifyform")
+	public String qnamodifyForm(@RequestParam int product_no, Model model) {
+		bs.qnacontentView(product_no, model);
+		return "board/qnamodifyform";
+	}
+	
 	
 	@PostMapping("modify")
 	public void modify(MultipartHttpServletRequest mul,
 					   HttpServletRequest request,
 					   HttpServletResponse response) throws Exception {
 		String message=bs.modify(mul, request);
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.print(message);
+	}
+	
+	@PostMapping("qnamodify")
+	public void qnamodify(MultipartHttpServletRequest mul,
+					   HttpServletRequest request,
+					   HttpServletResponse response) throws Exception {
+		String message=bs.qnamodify(mul, request);
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.print(message);
@@ -110,12 +136,19 @@ public class BoardController {
 		out.print(message);
 		
 	}
+	
+	@GetMapping("qnadelete")
+	public void qnadelete(@RequestParam int product_no,
+					   @RequestParam String product_img,
+	           		   HttpServletRequest request,
+	           		   HttpServletResponse response) throws Exception {
+		String message=bs.qnaboardDelete(product_no, product_img, request);
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.print(message);
+		
+	}
 
-//	@GetMapping("qna")
-//	public String qna(Model model, @RequestParam(value="num", required=false, defaultValue="1") int num) {
-//		bs.qna(model, num);
-//		return "board/qna";
-//	}
 	
 	
 }

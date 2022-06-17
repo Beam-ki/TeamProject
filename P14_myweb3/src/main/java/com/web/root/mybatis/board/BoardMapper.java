@@ -15,16 +15,26 @@ public interface BoardMapper {
 	
 	public int writeSave(BoardDTO dto);
 	
+	public int qnawriteSave(BoardDTO dto);
+	
 	public BoardDTO contentView(int product_no);
 	
-//	public void upHit(int product_no);
+	public BoardDTO qnacontentView(int product_no);
+	
+	public void upHit(int product_no);
 	
 	public int modify(BoardDTO dto);
 	
+	public int qnamodify(BoardDTO dto);
+	
 	public int delete(int product_no);
+	
+	public int qnadelete(int product_no);
 	
 	public int selectBoardCount();
 
-	public void upHit(int writeNo);
+
+
+
 
 }

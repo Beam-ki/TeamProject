@@ -1,5 +1,9 @@
 package com.web.root.mybatis.member;
 
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+
 import com.web.root.member.dto.MemberDTO;
 
 public interface MemberMapper {
